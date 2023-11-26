@@ -14,7 +14,6 @@ public final class Word {
         this.translate = "translation";
         this.num = 0;
     }
-
     public String getWord(){
         return word;
     }

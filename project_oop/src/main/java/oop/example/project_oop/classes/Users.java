@@ -14,7 +14,6 @@ public class Users {
         this.password=password;
     }
 
-
     public int getId(){
         return id;
     }
