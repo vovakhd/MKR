@@ -1,5 +1,5 @@
 package oop.example.project_oop.Data;
-
+import java.io.*;
 import oop.example.project_oop.classes.Users;
 import com.opencsv.CSVReader;
 import org.supercsv.io.CsvMapReader;
@@ -47,43 +47,92 @@ public class UserData {
             }
         }
     }
-    public static List<String> readUsersEmail() throws IOException {
+    public static List<String> readUsersEmailorPassword(int num) throws IOException {
+        String file = "users.csv";
+        BufferedReader reader = null;
+        String line = "";
         List<String> users_Email = new ArrayList<>();
-        CsvMapReader reader = null;
-        try  {
-            reader = new CsvMapReader(new FileReader("users.csv"), CsvPreference.STANDARD_PREFERENCE);
-            final String[] headers = reader.getHeader(true);
-            Map<String, String> row;
-            while ((row = reader.read(headers)) != null) {
-                String email = row.get("email");
-                users_Email.add(email);
+        List<String> users_Password= new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            line = reader.readLine();      //пропуск заголовків
+            while((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+                users_Email.add(row[0]);
+                users_Password.add(row[1]);
+
             }
-        } finally {
+        }finally {
             if (reader != null) {
                 reader.close();
             }
         }
-        return users_Email;
-
+        if(num==1) {
+            return users_Email;
+        }else{
+            return  users_Password;
+        }
 
     }
-    public static List<String> readUsersPassword() throws IOException {
-        List<String> users_Password = new ArrayList<>();
-        CsvMapReader reader = null;
-        try  {
-            reader = new CsvMapReader(new FileReader("users.csv"), CsvPreference.STANDARD_PREFERENCE);
-            final String[] headers = reader.getHeader(true);
-            Map<String, String> row;
-            while ((row = reader.read(headers)) != null) {
-                String email = row.get("email");
-                users_Password.add(email);
+    public static List<Integer> readUsersID() throws IOException {
+        String file = "users.csv";
+        BufferedReader reader = null;
+        String line = "";
+        List<Integer> users_ID = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            line = reader.readLine();      //пропуск заголовків
+            while((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+                users_ID.add(Integer.parseInt(row[2]));
+
             }
-        } finally {
+        }finally {
             if (reader != null) {
                 reader.close();
             }
         }
-        return users_Password;
+        return users_ID;
     }
 
+    public static int Email_ID(String email) throws IOException {
+        String file = "users.csv";
+        BufferedReader reader = null;
+        String line = "";
+        int users_ID=0;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            line = reader.readLine();      //пропуск заголовків
+            while((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+                if(email.equals(row[0])){
+                    users_ID=Integer.parseInt(row[2]);
+                }
+            }
+        }finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+        return users_ID;
+    }
+
+    public static void write_User(Users user)  throws IOException{
+        String file = "users.csv";
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(file, true));
+            String email= user.getEmail();
+            String password= user.getPassword();
+            int id= user.getId();
+            writer.write(email + "," + password + "," + id + "\n");
+
+        }finally {
+            if (writer != null) {
+                writer.close();
+            }
+        }
+
+    }
 }
