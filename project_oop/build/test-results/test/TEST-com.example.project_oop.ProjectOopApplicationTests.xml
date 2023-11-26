@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.project_oop.ProjectOopApplicationTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-11-26T17:31:25" hostname="DESKTOP-K6U79EJ" time="2.593">
+  <properties/>
+  <testcase name="accessUnsecuredResourceThenOk()" classname="com.example.project_oop.ProjectOopApplicationTests" time="1.997"/>
+  <testcase name="accessSecuredResourceUnauthenticatedThenRedirectsToLogin()" classname="com.example.project_oop.ProjectOopApplicationTests" time="0.02"/>
+  <testcase name="loginWithInvalidUserThenUnauthenticated()" classname="com.example.project_oop.ProjectOopApplicationTests" time="0.296"/>
+  <testcase name="loginWithValidUserThenAuthenticated()" classname="com.example.project_oop.ProjectOopApplicationTests" time="0.143"/>
+  <testcase name="accessSecuredResourceAuthenticatedThenOk()" classname="com.example.project_oop.ProjectOopApplicationTests" time="0.125"/>
+  <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+19:31:21.204 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.project_oop.ProjectOopApplicationTests]: ProjectOopApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:31:21.415 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.project_oop.ProjectOopApplication for test class com.example.project_oop.ProjectOopApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-26T19:31:22.170+02:00  INFO 2516 --- [    Test worker] c.e.p.ProjectOopApplicationTests         : Starting ProjectOopApplicationTests using Java 17.0.8 with PID 2516 (started by Lenovo in D:\MKR\project_oop)
+2023-11-26T19:31:22.174+02:00  INFO 2516 --- [    Test worker] c.e.p.ProjectOopApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T19:31:23.970+02:00  WARN 2516 --- [    Test worker] o.s.security.core.userdetails.User       : User.withDefaultPasswordEncoder() is considered unsafe for production and is only intended for sample applications.
+2023-11-26T19:31:24.407+02:00  INFO 2516 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1c61eda5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1859ffda, org.springframework.security.web.context.SecurityContextHolderFilter@6518fdfd, org.springframework.security.web.header.HeaderWriterFilter@186d8a71, org.springframework.security.web.csrf.CsrfFilter@5a0e0886, org.springframework.security.web.authentication.logout.LogoutFilter@5809fa26, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@f2276c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cde8c6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aeb0e2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59838256, org.springframework.security.web.access.ExceptionTranslationFilter@68ef01a5, org.springframework.security.web.access.intercept.AuthorizationFilter@64b0d1fa]
+2023-11-26T19:31:25.295+02:00  INFO 2516 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-11-26T19:31:25.296+02:00  INFO 2516 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-11-26T19:31:25.299+02:00  INFO 2516 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2023-11-26T19:31:25.363+02:00  INFO 2516 --- [    Test worker] c.e.p.ProjectOopApplicationTests         : Started ProjectOopApplicationTests in 3.646 seconds (process running for 6.021)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
