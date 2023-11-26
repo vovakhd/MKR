@@ -1,5 +1,7 @@
 package oop.example.project_oop.classes;
 
+import java.util.Objects;
+
 public class Users {
 
     private int id;
@@ -11,6 +13,7 @@ public class Users {
         this.email=email;
         this.password=password;
     }
+
 
     public int getId(){
         return id;
