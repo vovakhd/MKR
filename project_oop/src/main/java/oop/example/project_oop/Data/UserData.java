@@ -74,48 +74,6 @@ public class UserData {
         }
 
     }
-    public static List<Integer> readUsersID() throws IOException {
-        String file = "users.csv";
-        BufferedReader reader = null;
-        String line = "";
-        List<Integer> users_ID = new ArrayList<>();
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            line = reader.readLine();      //пропуск заголовків
-            while((line = reader.readLine()) != null) {
-                String[] row = line.split(",");
-                users_ID.add(Integer.parseInt(row[2]));
-
-            }
-        }finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        return users_ID;
-    }
-
-    public static int Email_ID(String email) throws IOException {
-        String file = "users.csv";
-        BufferedReader reader = null;
-        String line = "";
-        int users_ID=0;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            line = reader.readLine();      //пропуск заголовків
-            while((line = reader.readLine()) != null) {
-                String[] row = line.split(",");
-                if(email.equals(row[0])){
-                    users_ID=Integer.parseInt(row[2]);
-                }
-            }
-        }finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        return users_ID;
-    }
 
     public static String Email_Password(String email) throws IOException {
         String file = "users.csv";
@@ -147,8 +105,7 @@ public class UserData {
             writer = new BufferedWriter(new FileWriter(file, true));
             String email= user.getEmail();
             String password= user.getPassword();
-            int id= user.getId();
-            writer.write(email + "," + password + "," + id + "\n");
+            writer.write(email + "," + password + "\n");
 
         }finally {
             if (writer != null) {
