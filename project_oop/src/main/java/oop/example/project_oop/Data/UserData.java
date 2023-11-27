@@ -117,6 +117,28 @@ public class UserData {
         return users_ID;
     }
 
+    public static String Email_Password(String email) throws IOException {
+        String file = "users.csv";
+        BufferedReader reader = null;
+        String line = "";
+        String users_Password = "";
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            line = reader.readLine();      //пропуск заголовків
+            while((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+                if(email.equals(row[0])){
+                    users_Password=row[1];
+                }
+            }
+        }finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+        return users_Password;
+    }
+
     public static void write_User(Users user)  throws IOException{
         String file = "users.csv";
         BufferedWriter writer = null;
@@ -133,6 +155,40 @@ public class UserData {
                 writer.close();
             }
         }
-
+    }
+    public static void changePassword(String email,String password)  throws IOException{
+        String file = "users.csv";
+        BufferedReader reader = null;
+        BufferedWriter writer = null;
+        String line = "";
+        List<String> users_Email = new ArrayList<>();
+        List<String> users_Password= new ArrayList<>();
+        List<Integer> users_ID = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            line = reader.readLine();
+            while((line = reader.readLine()) != null) {
+                String[] row = line.split(",");
+                if(email.equals(row[0])){
+                    users_Password.add(password);
+                }else{
+                    users_Password.add(row[1]);
+                }
+                users_Email.add(row[0]);
+                users_ID.add(Integer.parseInt(row[2]));
+            }
+            writer = new BufferedWriter(new FileWriter(file));
+            writer.write("email" + "," + "password" + "," + "id" + "\n");
+            for(int i=0;i<users_Email.size();i++){
+                writer.write(users_Email.get(i) + "," + users_Password.get(i) + "," + users_ID.get(i) + "\n");
+            }
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+            if (writer != null) {
+                writer.close();
+            }
+        }
     }
 }
