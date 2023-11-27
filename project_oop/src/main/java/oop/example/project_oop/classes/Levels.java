@@ -1,12 +1,10 @@
 package oop.example.project_oop.Classes;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-@Setter
-@Getter
-public class Levels extends Lessons {
+@Data
+@AllArgsConstructor
+public class Levels {
     private String level;
-    private String levelProgress;
-    private int lessonsNumber;
 }

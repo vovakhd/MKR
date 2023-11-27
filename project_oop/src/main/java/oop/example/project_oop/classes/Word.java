@@ -3,17 +3,17 @@ package oop.example.project_oop.Classes;
 import lombok.Getter;
 
 @Getter
-public class Word {
-    private String word;
-    private String translate;
+public final class Word {
+    final private String word;
+    final private String translate;
     private int num;
 
-    public Word(String word, String translate, int num) {
-        this.word = word;
-        this.translate = translate;
-        this.num = num;
-    }
 
+    public Word() {
+        this.word = "word";
+        this.translate = "translation";
+        this.num = 0;
+    }
     public String getWord(){
         return word;
     }
