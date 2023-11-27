@@ -120,7 +120,6 @@ public class UserData {
         String line = "";
         List<String> users_Email = new ArrayList<>();
         List<String> users_Password= new ArrayList<>();
-        List<Integer> users_ID = new ArrayList<>();
         try {
             reader = new BufferedReader(new FileReader(file));
             line = reader.readLine();
@@ -132,12 +131,11 @@ public class UserData {
                     users_Password.add(row[1]);
                 }
                 users_Email.add(row[0]);
-                users_ID.add(Integer.parseInt(row[2]));
             }
             writer = new BufferedWriter(new FileWriter(file));
             writer.write("email" + "," + "password" + "," + "id" + "\n");
             for(int i=0;i<users_Email.size();i++){
-                writer.write(users_Email.get(i) + "," + users_Password.get(i) + "," + users_ID.get(i) + "\n");
+                writer.write(users_Email.get(i) + "," + users_Password.get(i) +  "\n");
             }
         } finally {
             if (reader != null) {
