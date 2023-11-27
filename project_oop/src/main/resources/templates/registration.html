@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>app</title>
+</head>
+<body>
+<h1>OOP PROJECT</h1><hr>
+<h4>Registration</h4>
+<form th:action="@{/registration.html}" method="post">
+    E-mail: <input type="email" name="username"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="submit" value="Sign in"/>
+</form>
+<p><a th:href="@{/login}">I have account!</a></p>
+
+</body>
+</html>
