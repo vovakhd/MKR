@@ -1,4 +1,4 @@
-package oop.example.project_oop.classes;
+package oop.example.project_oop.Classes;
 
 import java.util.Objects;
 
