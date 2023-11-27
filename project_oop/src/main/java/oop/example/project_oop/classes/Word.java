@@ -1,4 +1,4 @@
-package oop.example.project_oop.Classes;
+package oop.example.project_oop.classes;
 
 import lombok.Getter;
 
