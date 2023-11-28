@@ -47,6 +47,7 @@ public class UserData {
             }
         }
     }
+
     public static List<String> readUsersEmailorPassword(int num) throws IOException {
         String file = "users.csv";
         BufferedReader reader = null;
@@ -67,6 +68,7 @@ public class UserData {
                 reader.close();
             }
         }
+        //повернення списка електронних пошт або паролів
         if(num==1) {
             return users_Email;
         }else{
@@ -80,6 +82,7 @@ public class UserData {
         BufferedReader reader = null;
         String line = "";
         String users_Password = "";
+        //зчитування і пошук потрібного паролю
         try {
             reader = new BufferedReader(new FileReader(file));
             line = reader.readLine();      //пропуск заголовків
@@ -100,7 +103,7 @@ public class UserData {
     public static void write_User(Users user)  throws IOException{
         String file = "users.csv";
         BufferedWriter writer = null;
-
+        //додавання нового рядка у файл
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
             String email= user.getEmail();
@@ -120,6 +123,7 @@ public class UserData {
         String line = "";
         List<String> users_Email = new ArrayList<>();
         List<String> users_Password= new ArrayList<>();
+        //зчитування даних з файлу
         try {
             reader = new BufferedReader(new FileReader(file));
             line = reader.readLine();
@@ -132,8 +136,9 @@ public class UserData {
                 }
                 users_Email.add(row[0]);
             }
+            //запис оновлених даних
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("email" + "," + "password" + "," + "id" + "\n");
+            writer.write("email" + "," + "password"+ "\n");
             for(int i=0;i<users_Email.size();i++){
                 writer.write(users_Email.get(i) + "," + users_Password.get(i) +  "\n");
             }

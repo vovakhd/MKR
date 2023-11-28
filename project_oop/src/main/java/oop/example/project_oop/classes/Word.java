@@ -3,16 +3,15 @@ package oop.example.project_oop.Classes;
 import lombok.Getter;
 
 @Getter
-public final class Word {
-    final private String word;
-    final private String translate;
-    private int num;
+public class Word {
+    private String word;
+    private String translate;
+    private int indikator;
 
-
-    public Word() {
-        this.word = "word";
-        this.translate = "translation";
-        this.num = 0;
+    public Word(String word,String translate,int indikator) {
+        this.word=word;
+        this.translate=translate;
+        this.indikator = indikator;
     }
     public String getWord(){
         return word;
@@ -21,7 +20,7 @@ public final class Word {
         return  translate;
     }
 
-    public int getNum(){
-        return num;
+    public int getIndikator(){
+        return indikator;
     }
 }
