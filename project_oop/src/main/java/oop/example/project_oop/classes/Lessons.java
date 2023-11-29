@@ -3,6 +3,8 @@ package oop.example.project_oop.classes;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import java.io.FileReader;
@@ -14,9 +16,13 @@ import java.text.DecimalFormat;
 
 @Setter
 @Getter
+@Entity
 public class Lessons {
     private String numberOfLesson;
     private String lessonProgress;
+    @Id
+    private Long id;
+
     public double calculateProgress(String userColumn, String targetLevel, int targetLesson) throws IOException, CsvException {
         List<String[]> words = readCSV();
 
@@ -96,5 +102,13 @@ public class Lessons {
         } catch (IOException | CsvException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

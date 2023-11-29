@@ -1,31 +1,41 @@
 package oop.example.project_oop.classes;
 
-import org.supercsv.io.CsvMapReader;
-import org.supercsv.io.CsvMapWriter;
-import org.supercsv.io.ICsvMapReader;
-import org.supercsv.io.ICsvMapWriter;
-import org.supercsv.prefs.CsvPreference;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Map;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Users {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
     private String email;
     private String password;
 
-    public Users(String email,String password){
-        this.email=email;
-        this.password=password;
-    }
-    public String getEmail(){
-        return  email;
-    }
-    public String getPassword(){
-        return password;
-    }
-    public void changePassword(String newPassword){
-        this.password=newPassword;
+    protected Users() {}
+
+    public Users(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+    }
 }
