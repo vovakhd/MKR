@@ -6,22 +6,25 @@ import lombok.Getter;
 public class Word {
     private String word;
     private String translate;
-    private int num;
+    private int indicator;
 
-    public Word(String word, String translate, int num) {
-        this.word = word;
-        this.translate = translate;
-        this.num = num;
+    public Word(String word,String translate,int indicator) {
+        this.word=word;
+        this.translate=translate;
+        this.indicator=indicator;
+
     }
 
-    public String getWord(){
+    public String getWord() {
         return word;
     }
-    public String getTranslate(){
-        return  translate;
+    public String getTranslate() {
+        return translate;
     }
-
-    public int getNum(){
-        return num;
+    public int getIndicator() {
+        return indicator;
+    }
+    public void setIndicator(int indicator) {
+        this.indicator = indicator;
     }
 }
