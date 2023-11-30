@@ -42,6 +42,9 @@ public class WordData {
                 reader.close();
             }
         }
+        if(Word.isEmpty()){
+            return new Word("1", "1", 1);
+        }
         Random random = new Random();
         int word_random=random.nextInt(Word.size());
         String word=Word.get(word_random);
