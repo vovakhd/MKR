@@ -99,9 +99,9 @@ public class WordData {
             }
         }
         //заміна рядка на оновлений в fileData
-        row=fileData.get(index_word-1);
+        row=fileData.get(index_word);
         row[index_email] = String.valueOf(indikator + update);
-        fileData.set(index_word-1,row);
+        fileData.set(index_word,row);
         //запис назад у файл
         try {
             writer = new BufferedWriter(new FileWriter(file));
