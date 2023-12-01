@@ -55,11 +55,7 @@ public class WordController {
 
     @PostMapping("/Know")
     public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
-        if(wordService.getIndicator()<0){
-            wordService.update_id(wordService.getIndicator()+5, auth.getName());
-        }else {
-            wordService.update_id(5 - wordService.getIndicator(), auth.getName());
-        }
+        wordService.update_id(5 - wordService.getIndicator(), auth.getName());
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         wordService.generateNewWord(Level,Lesson,auth.getName());
