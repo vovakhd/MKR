@@ -13,8 +13,6 @@ private final UsersService usersService;
     @Override
     public void run(ApplicationArguments args) throws Exception {
         System.out.println("APPLICATION IS WORKING!");
-        usersService.loadUsersFromFile();
-
-
+        usersService.loadUsersFromFile(); //завантажує користувачів з файлу у репозиторій
     }
 }

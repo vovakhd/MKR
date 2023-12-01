@@ -1,6 +1,2 @@
 email,password
-user1@mail,pass1
-user2@mail,pass2
-user3@mail,pass3
-user4@mail,pass4
-user5@mail,PASSWORD5
+user@mail,$2a$08$aghNlEMojLAaO6uxxLbN1eagwTc4IlVEqz7Rh.C3qL8W2N.2moDaW
