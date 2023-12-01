@@ -9,60 +9,66 @@ import org.springframework.ui.Model;
 @Controller
 @RequestMapping("/{level}/{lesson}/pageword")
 public class WordController {
+    String Level;
+    int Lesson;
+    String Email;
     private WordService wordService;
 
     @GetMapping("")
     public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lesson") String lesson, Model model) {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
-        wordService.generateNewWord(level, lesson, auth.getName());
-        if(wordService.getWord_now().getWord().equals("1")){
+        this.Level = String.valueOf(level.charAt(level.length()-1));
+        this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
+        this.Email = auth.getName();
+        this.wordService = new WordService(Level, Lesson, Email);
+        if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 
     @PostMapping("/Click")
-    public String Click(Authentication auth,@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lesson") String lesson, Model model) {
+    public String Click(@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lesson") String lesson, Model model) {
         if ("yes".equals(button)) {
-            wordService.update_id(1, auth.getName());
+            wordService.update_id(1);
         } else if ("no".equals(button)) {
-            wordService.update_id(-1, auth.getName());
+            wordService.update_id(-1);
         }
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
-        wordService.generateNewWord(level, lesson, auth.getName());
-        if(wordService.getWord_now().equals("1")){
+        wordService.generateNewWord();
+        if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 
     @PostMapping("/Result")
     public String Result(@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
-        model.addAttribute("word", wordService.getWord_now().getWord());
-        model.addAttribute("translate", wordService.getWord_now().getTranslate());
+        model.addAttribute("word", wordService.getWord());
+        model.addAttribute("translate", wordService.getTranslate());
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         return "answer";
     }
 
     @PostMapping("/Know")
-    public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
-        if(wordService.getWord_now().getIndicator()<0){
-            wordService.update_id(wordService.getWord_now().getIndicator()+5, auth.getName());
+    public String Know(@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
+        if(wordService.getIndicator()<0){
+            wordService.update_id(wordService.getIndicator()+5);
         }else {
-            wordService.update_id(5 - wordService.getWord_now().getIndicator(), auth.getName());
+            wordService.update_id(5 - wordService.getIndicator());
         }
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
-        wordService.generateNewWord(level, lesson, auth.getName());
-        if(wordService.getWord_now().getWord().equals("1")){
+        wordService.generateNewWord();
+        if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 

@@ -1,6 +1,5 @@
 package oop.example.project_oop.services;
 
-import lombok.Getter;
 import oop.example.project_oop.classes.Word;
 import org.springframework.stereotype.Service;
 
@@ -9,21 +8,47 @@ import java.io.IOException;
 import static oop.example.project_oop.Data.WordData.create_Word;
 import static oop.example.project_oop.Data.WordData.update_indikator;
 @Service
-@Getter
 public class WordService {
-    private Word word_now ;
-    public void update_id(int update, String email) {
-        word_now.setIndicator(word_now.getIndicator()+update);
+    private Word wordService ;
+    private String email;
+    private String level;
+    private int lesson;
+
+    public WordService(String level,int lesson,String email){
+        this.email = email;
+        this.level = level;
+        this.lesson = lesson;
         try {
-            update_indikator(word_now.getWord(),email,update);
+            this.wordService = create_Word(level, lesson, email);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void generateNewWord(String level, String lesson, String email) {
+    public String getTranslate(){
+        return wordService.getTranslate();
+    }
+
+    public String getWord(){
+        return wordService.getWord();
+    }
+
+    public int getIndicator() {
+        return  wordService.getIndicator();
+    }
+
+    public void update_id(int update) {
+        wordService.setIndicator(wordService.getIndicator()+update);
         try {
-            word_now =create_Word(level, Integer.parseInt(lesson), email);
+            update_indikator(wordService.getWord(),email,update);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void generateNewWord() {
+        try {
+            wordService = create_Word(level, lesson, email);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
