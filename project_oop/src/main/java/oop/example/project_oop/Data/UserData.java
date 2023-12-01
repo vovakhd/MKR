@@ -26,7 +26,7 @@ public class UserData {
             final String[] oldHeaders = Reader.getHeader(true);
             final String[] newHeaders = new String[oldHeaders.length + 1];
             System.arraycopy(oldHeaders, 0, newHeaders, 0, oldHeaders.length);
-            newHeaders[newHeaders.length - 1] = user.getId().toString();
+            newHeaders[newHeaders.length - 1] = user.getEmail();
 
             //write newHeaders with new column
             Writer = new CsvMapWriter(new FileWriter("vocabulary.csv"), CsvPreference.STANDARD_PREFERENCE);
@@ -34,7 +34,7 @@ public class UserData {
             //fill column with -1 for every word
             Map<String, String> row;
             while ((row = Reader.read(oldHeaders)) != null) {
-                row.put(user.getId().toString(), "-1");
+                row.put(user.getEmail(), "-1");
                 Writer.write(row, newHeaders);
             }
 
