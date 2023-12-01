@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 
 @Controller
-@RequestMapping("/{level}/{lesson}/pageword")
+@RequestMapping("/{level}/{lessons}/pageword")
 public class WordController {
     String Level;
     int Lesson;
@@ -15,7 +15,7 @@ public class WordController {
     private WordService wordService;
 
     @GetMapping("")
-    public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lesson") String lesson, Model model) {
+    public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         this.Level = String.valueOf(level.charAt(level.length()-1));
@@ -30,7 +30,7 @@ public class WordController {
     }
 
     @PostMapping("/Click")
-    public String Click(@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lesson") String lesson, Model model) {
+    public String Click(@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson, Model model) {
         if ("yes".equals(button)) {
             wordService.update_id(1);
         } else if ("no".equals(button)) {
@@ -47,7 +47,7 @@ public class WordController {
     }
 
     @PostMapping("/Result")
-    public String Result(@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
+    public String Result(@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
         model.addAttribute("word", wordService.getWord());
         model.addAttribute("translate", wordService.getTranslate());
         model.addAttribute("level", level);
@@ -56,7 +56,7 @@ public class WordController {
     }
 
     @PostMapping("/Know")
-    public String Know(@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
+    public String Know(@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
         if(wordService.getIndicator()<0){
             wordService.update_id(wordService.getIndicator()+5);
         }else {

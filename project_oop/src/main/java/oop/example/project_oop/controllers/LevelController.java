@@ -11,13 +11,13 @@ public class LevelController {
     public String levelA(Model model) {
         model.addAttribute("title", "Рівень А");
         model.addAttribute("level", "levelA");
-        return "lesson";
+        return "lessons";
     }
     @GetMapping("/levelB")
     public String levelB(Model model) {
         model.addAttribute("title", "Рівень B");
         model.addAttribute("level", "levelB");
-        return "lesson";
+        return "lessons";
     }
     @GetMapping("/Levels")
     public String levels() {

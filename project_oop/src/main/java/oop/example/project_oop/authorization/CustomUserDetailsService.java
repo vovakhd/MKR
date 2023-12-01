@@ -1,6 +1,5 @@
 package oop.example.project_oop.authorization;
 
-import lombok.RequiredArgsConstructor;
 import oop.example.project_oop.classes.Users;
 import oop.example.project_oop.repositories.UsersRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,10 +8,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UsersRepository repository;
+
+    public CustomUserDetailsService(UsersRepository repository) {
+        this.repository = repository;
+    }
 
     /** Security authorisation uses data from UserRepository,
      which contain all ever registered users*/
