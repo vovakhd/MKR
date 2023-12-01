@@ -11,17 +11,14 @@ import static oop.example.project_oop.Data.WordData.update_indikator;
 @Service
 public class WordService {
     private Word wordService ;
-    private String email;   //треба emeil користувача
-    private String level;   //треба level в якому він знаходиться
-    private int lesson;     //треба lesson в якому він знаходиться
+    private String email;
+    private String level;
+    private int lesson;
 
-    public WordService(String email,String level,int lesson) {
+    public WordService(String level,int lesson,String email){
         this.email = email;
         this.level = level;
         this.lesson = lesson;
-    }
-
-    public WordService(){
         try {
             this.wordService = create_Word(level, lesson, email);
         } catch (IOException e) {

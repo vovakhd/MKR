@@ -1,5 +1,6 @@
 package oop.example.project_oop.controllers;
 import oop.example.project_oop.services.WordService;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -8,15 +9,19 @@ import org.springframework.ui.Model;
 @Controller
 @RequestMapping("/{level}/{lesson}/pageword")
 public class WordController {
-
-    WordService wordService=new WordService();
-
-
+    String Level;
+    int Lesson;
+    String Email;
+    private WordService wordService;
 
     @GetMapping("")
-    public String pageword(@PathVariable("level") String level, @PathVariable ("lesson") String lesson, Model model) {
+    public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lesson") String lesson, Model model) {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
+        this.Level = level;
+        this.Lesson = Integer.parseInt(lesson);
+        this.Email = auth.getName();
+        this.wordService = new WordService(Level, Lesson, Email);
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
