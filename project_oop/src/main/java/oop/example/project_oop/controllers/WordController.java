@@ -21,7 +21,7 @@ public class WordController {
         this.Level = String.valueOf(level.charAt(level.length()-1));
         this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
         this.Email = auth.getName();
-        this.wordService = new WordService(Level, Lesson, Email);
+        this.wordService = new WordService();
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
@@ -30,15 +30,15 @@ public class WordController {
     }
 
     @PostMapping("/Click")
-    public String Click(@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson, Model model) {
+    public String Click(Authentication auth,@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson, Model model) {
         if ("yes".equals(button)) {
-            wordService.update_id(1);
+            wordService.update_id(1, auth.getName());
         } else if ("no".equals(button)) {
-            wordService.update_id(-1);
+            wordService.update_id(-1, auth.getName());
         }
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
-        wordService.generateNewWord();
+        wordService.generateNewWord(Level,Lesson,auth.getName());
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
@@ -56,15 +56,15 @@ public class WordController {
     }
 
     @PostMapping("/Know")
-    public String Know(@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
+    public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
         if(wordService.getIndicator()<0){
-            wordService.update_id(wordService.getIndicator()+5);
+            wordService.update_id(wordService.getIndicator()+5, auth.getName());
         }else {
-            wordService.update_id(5 - wordService.getIndicator());
+            wordService.update_id(5 - wordService.getIndicator(), auth.getName());
         }
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
-        wordService.generateNewWord();
+        wordService.generateNewWord(Level,Lesson,auth.getName());
         if(wordService.getWord().equals("1")){
             return "allwords";
         }

@@ -10,21 +10,6 @@ import static oop.example.project_oop.Data.WordData.update_indikator;
 @Service
 public class WordService {
     private Word wordService ;
-    private String email;
-    private String level;
-    private int lesson;
-
-    public WordService(String level,int lesson,String email){
-        this.email = email;
-        this.level = level;
-        this.lesson = lesson;
-        try {
-            this.wordService = create_Word(level, lesson, email);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public String getTranslate(){
         return wordService.getTranslate();
     }
@@ -37,7 +22,7 @@ public class WordService {
         return  wordService.getIndicator();
     }
 
-    public void update_id(int update) {
+    public void update_id(int update, String email) {
         wordService.setIndicator(wordService.getIndicator()+update);
         try {
             update_indikator(wordService.getWord(),email,update);
@@ -46,7 +31,7 @@ public class WordService {
         }
     }
 
-    public void generateNewWord() {
+    public void generateNewWord(String level,int lesson,String email) {
         try {
             wordService = create_Word(level, lesson, email);
         } catch (IOException e) {
