@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Answer Page</title>
+    <title>Answer</title>
 </head>
 <body>
 <p th:text="|Слово: ${word}|"></p>
 <p th:text="|Переклад: ${translate}|"></p>
 <p>Ви знали переклад?</p>
-<form action="/Click" method="post">
+<form th:action="@{'/' + ${level} +'/' + ${lesson} + '/pageword/Click'}" method="post">
     <button type="submit" name="button" value="yes">Так</button>
     <button type="submit" name="button" value="no">Ні</button>
 </form>
 <p></p>
-<form action="/Know" method="post">
+<form th:action="@{'/' + ${level} +'/' + ${lesson} + '/pageword/Know'}" method="post">
     <button type="submit" name="button" value="yes">Не показувати це слово</button>
 </form>
 </body>

@@ -1,0 +1,45 @@
+Index: project_oop/src/main/java/oop/example/project_oop/services/UsersService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package oop.example.project_oop.services;\r\n\r\nimport lombok.RequiredArgsConstructor;\r\nimport oop.example.project_oop.ProjectOopApplication;\r\nimport oop.example.project_oop.SecurityConfig;\r\nimport oop.example.project_oop.classes.Users;\r\nimport oop.example.project_oop.repositories.UsersRepository;\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.stereotype.Service;\r\nimport org.supercsv.io.CsvMapReader;\r\nimport org.supercsv.prefs.CsvPreference;\r\n\r\nimport java.io.FileNotFoundException;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.Map;\r\n\r\nimport static oop.example.project_oop.Data.UserData.addUserToVocabulary;\r\nimport static oop.example.project_oop.Data.UserData.write_User;\r\n\r\n@Service\r\n@RequiredArgsConstructor\r\npublic class UsersService {\r\n    private final Logger log = LoggerFactory.getLogger(ProjectOopApplication.class);\r\n    private final UsersRepository repository;\r\n\r\n    /**- Creating the entity of the user -\r\n     checking uniquely of email,\r\n     encode a password,\r\n     and save new user to repository\r\n     and save new user to file\r\n     and add to the vocabulary(personal progress)*/\r\n    public boolean createUser(Users user) throws IOException {\r\n        if (repository.findByEmail(user.getEmail()) != null) return false;\r\n        user.setPassword(user.getPassword());\r\n        repository.save(user); //save in repository as entity\r\n        write_User(user); //add to the file with users\r\n        addUserToVocabulary(user);  //add to the file vocabulary\r\n        log.info(\"New User was registered: {}\", user.getEmail());\r\n        return true;\r\n    }\r\n\r\n    public boolean loadUsersFromFile() throws IOException {\r\n        CsvMapReader Reader = null;\r\n        try {\r\n            //read headers\r\n            Reader = new CsvMapReader(new FileReader(\"users.csv\"), CsvPreference.STANDARD_PREFERENCE);\r\n            final String[] Headers = Reader.getHeader(true);\r\n\r\n            Map<String, String> row;\r\n            while ((row = Reader.read(Headers)) != null) {\r\n                //read each row and save the user as an entity in the repository\r\n                Users user = new Users(row.get(\"email\"), row.get(\"password\"));\r\n                repository.save(user);\r\n                log.info(\"User was saved from file: {} {}\", user.getEmail(), user.getPassword());\r\n            }\r\n            return true;\r\n\r\n        } catch (FileNotFoundException e) {\r\n            throw new RuntimeException(e);\r\n        } finally { //close file\r\n            if (Reader != null)\r\n                Reader.close();\r\n        }\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project_oop/src/main/java/oop/example/project_oop/services/UsersService.java b/project_oop/src/main/java/oop/example/project_oop/services/UsersService.java
+--- a/project_oop/src/main/java/oop/example/project_oop/services/UsersService.java	(revision d0fd027ca2ccecb24a54030dad515bbe583da1bc)
++++ b/project_oop/src/main/java/oop/example/project_oop/services/UsersService.java	(date 1701232862504)
+@@ -2,7 +2,6 @@
+ 
+ import lombok.RequiredArgsConstructor;
+ import oop.example.project_oop.ProjectOopApplication;
+-import oop.example.project_oop.SecurityConfig;
+ import oop.example.project_oop.classes.Users;
+ import oop.example.project_oop.repositories.UsersRepository;
+ import org.slf4j.Logger;
+@@ -14,7 +13,6 @@
+ import java.io.FileNotFoundException;
+ import java.io.FileReader;
+ import java.io.IOException;
+-import java.util.List;
+ import java.util.Map;
+ 
+ import static oop.example.project_oop.Data.UserData.addUserToVocabulary;
+Index: project_oop/src/main/java/oop/example/project_oop/classes/Users.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package oop.example.project_oop.classes;\r\n\r\n\r\nimport jakarta.persistence.Entity;\r\nimport jakarta.persistence.GeneratedValue;\r\nimport jakarta.persistence.GenerationType;\r\nimport jakarta.persistence.Id;\r\n\r\n@Entity\r\npublic class Users {\r\n\r\n    @Id\r\n    @GeneratedValue(strategy= GenerationType.AUTO)\r\n    private Long id;\r\n    private String email;\r\n    private String password;\r\n\r\n    protected Users() {}\r\n\r\n    public Users(String email, String password) {\r\n        this.email = email;\r\n        this.password = password;\r\n    }\r\n\r\n\r\n\r\n    public Long getId() {\r\n        return id;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project_oop/src/main/java/oop/example/project_oop/classes/Users.java b/project_oop/src/main/java/oop/example/project_oop/classes/Users.java
+--- a/project_oop/src/main/java/oop/example/project_oop/classes/Users.java	(revision d0fd027ca2ccecb24a54030dad515bbe583da1bc)
++++ b/project_oop/src/main/java/oop/example/project_oop/classes/Users.java	(date 1701233873815)
+@@ -22,8 +22,6 @@
+         this.password = password;
+     }
+ 
+-
+-
+     public Long getId() {
+         return id;
+     }

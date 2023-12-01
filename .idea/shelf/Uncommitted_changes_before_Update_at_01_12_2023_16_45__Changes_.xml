@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]" date="1701398728685" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 01.12.2023 16:45 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/Data/UserData.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/Data/UserData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/UserData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/checksums.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_12_2023_16_45_[Changes]/executionHistory.lock" />
+  </binary>
+</changelist>
