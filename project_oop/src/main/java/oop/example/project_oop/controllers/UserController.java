@@ -32,7 +32,7 @@ public class UserController {
     @GetMapping("/home")
     public String home(Authentication auth, Model model) {
         model.addAttribute("name", auth.getName());
-        return "home";
+        return "levels";
     }
 
     @GetMapping("/registration")
