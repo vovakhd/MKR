@@ -8,7 +8,7 @@
 <body>
 <p th:text="|Слово: ${word}|"></p>
 <p></p>
-<form action="/Result" method="post">
+<form th:action="@{'/' + ${level} +'/' + ${lesson} + '/pageword/Result'}" method="post">
     <button type="submit" name="button" value="yes">Дивитись переклад</button>
 </form>
 <p></p>

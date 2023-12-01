@@ -1,0 +1,677 @@
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+new file mode 100644
+--- /dev/null	(date 1701226671128)
++++ b/.idea/gradle.xml	(date 1701226671128)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
++  <component name="GradleSettings">
++    <option name="linkedExternalProjectsSettings">
++      <GradleProjectSettings>
++        <option name="externalProjectPath" value="$PROJECT_DIR$/project_oop" />
++        <option name="modules">
++          <set>
++            <option value="$PROJECT_DIR$/project_oop" />
++          </set>
++        </option>
++      </GradleProjectSettings>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1701227203646)
++++ b/.idea/workspace.xml	(date 1701227203646)
+@@ -0,0 +1,146 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="1e4814c1-d598-46a6-b2e7-9db1a1654ff5" name="Changes" comment="функція оновлення індикотора в WordData">
++      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_13_58_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2023_13_59_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ExternalProjectsData">
++    <projectState path="$PROJECT_DIR$/project_oop">
++      <ProjectState />
++    </projectState>
++  </component>
++  <component name="ExternalProjectsManager">
++    <system id="GRADLE">
++      <state>
++        <task path="$PROJECT_DIR$/project_oop">
++          <activation />
++        </task>
++        <projects_view>
++          <tree_state>
++            <expand />
++            <select />
++          </tree_state>
++        </projects_view>
++      </state>
++    </system>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="packages" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 8
++}</component>
++  <component name="ProjectId" id="2YmSukrLOfCNQRMGdIpYmKkH1XD" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showExcludedFiles" value="false" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;packages&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/OWNER/Progect_oop/MKR&quot;
++  }
++}</component>
++  <component name="RunManager">
++    <configuration name="project_oop [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$/project_oop" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value="build" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <RunAsTest>false</RunAsTest>
++      <method v="2" />
++    </configuration>
++    <configuration default="true" type="JetRunConfigurationType">
++      <module name="project_oop.main" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
++      <module name="project_oop.main" />
++      <option name="filePath" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Gradle.project_oop [build]" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="1e4814c1-d598-46a6-b2e7-9db1a1654ff5" name="Changes" comment="функція create_Word в WordData" />
++      <created>1701129487032</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1701129487032</updated>
++    </task>
++    <task id="LOCAL-00001" summary="функція оновлення індикотора в WordData">
++      <option name="closed" value="true" />
++      <created>1701131411873</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1701131411873</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="функція оновлення індикотора в WordData" />
++    <option name="LAST_COMMIT_MESSAGE" value="функція оновлення індикотора в WordData" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1701226671115)
++++ b/.idea/misc.xml	(date 1701226671115)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package oop.example.project_oop.Classes;\r\n\r\nimport lombok.Getter;\r\n\r\n@Getter\r\npublic final class Word {\r\n    final private String word;\r\n    final private String translate;\r\n    private int num;\r\n\r\n\r\n    public Word() {\r\n        this.word = \"word\";\r\n        this.translate = \"translation\";\r\n        this.num = 0;\r\n    }\r\n    public String getWord(){\r\n        return word;\r\n    }\r\n    public String getTranslate(){\r\n        return  translate;\r\n    }\r\n\r\n    public int getNum(){\r\n        return num;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
+--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(revision 8ca62bfb8899f666f65a311b3895646cb74282c9)
++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(date 1701130236315)
+@@ -3,16 +3,15 @@
+ import lombok.Getter;
+ 
+ @Getter
+-public final class Word {
+-    final private String word;
+-    final private String translate;
+-    private int num;
++public class Word {
++    private String word;
++    private String translate;
++    private int indikator;
+ 
+-
+-    public Word() {
+-        this.word = "word";
+-        this.translate = "translation";
+-        this.num = 0;
++    public Word(String word,String translate,int indikator) {
++        this.word=word;
++        this.translate=translate;
++        this.indikator = indikator;
+     }
+     public String getWord(){
+         return word;
+@@ -21,7 +20,7 @@
+         return  translate;
+     }
+ 
+-    public int getNum(){
+-        return num;
++    public int getIndikator(){
++        return indikator;
+     }
+ }
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile name=\"Gradle Imported\" enabled=\"true\">\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <processorPath useClasspath=\"false\">\r\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.30/f195ee86e6c896ea47a1d39defbe20eb59cd149d/lombok-1.18.30.jar\" />\r\n        </processorPath>\r\n        <module name=\"project_oop.main\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 8ca62bfb8899f666f65a311b3895646cb74282c9)
++++ b/.idea/compiler.xml	(date 1701226717933)
+@@ -10,5 +10,6 @@
+         <module name="project_oop.main" />
+       </profile>
+     </annotationProcessing>
++    <bytecodeTargetLevel target="17" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_13_58_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_13_58_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_13_58_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1701129538404)
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_13_58_[Changes]/shelved.patch	(date 1701129538404)
+@@ -0,0 +1,196 @@
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\n//@Data\r\n//@AllArgsConstructor\r\n//public class Lessons extends Levels {\r\n//    private String levelNumber;\r\n//    private String levelContent;\r\n//}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java	(date 1701129406617)
++@@ -1,11 +1,11 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import lombok.AllArgsConstructor;
++ import lombok.Data;
++ 
++-//@Data
++-//@AllArgsConstructor
++-//public class Lessons extends Levels {
++-//    private String levelNumber;
++-//    private String levelContent;
++-//}
+++@Data
+++@AllArgsConstructor
+++public class Lessons extends Levels {
+++    private String levelNumber;
+++    private String levelContent;
+++}
++Index: .idea/modules/project_oop.main.iml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module version=\"4\">\r\n  <component name=\"AdditionalModuleElements\">\r\n    <content url=\"file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main\" isTestSource=\"false\" generated=\"true\" />\r\n    </content>\r\n  </component>\r\n</module>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/modules/project_oop.main.iml b/.idea/modules/project_oop.main.iml
++--- a/.idea/modules/project_oop.main.iml	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/.idea/modules/project_oop.main.iml	(date 1701129439838)
++@@ -1,8 +1,66 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++-<module version="4">
+++<module external.linked.project.id="project_oop:main" external.linked.project.path="$MODULE_DIR$/../../project_oop" external.root.project.path="$MODULE_DIR$/../../project_oop" external.system.id="GRADLE" external.system.module.group="oop.example" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
++   <component name="AdditionalModuleElements">
++     <content url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main">
++       <sourceFolder url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
++     </content>
++   </component>
+++  <component name="NewModuleRootManager">
+++    <output url="file://$MODULE_DIR$/../../project_oop/build/classes/java/main" />
+++    <exclude-output />
+++    <content url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main">
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+++    </content>
+++    <content url="file://$MODULE_DIR$/../../project_oop/src/main">
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/src/main/java" isTestSource="false" />
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/src/main/resources" type="java-resource" />
+++    </content>
+++    <orderEntry type="inheritedJdk" />
+++    <orderEntry type="sourceFolder" forTests="false" />
+++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.30" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-mail:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.eclipse.angus:jakarta.mail:1.1.0" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-web:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:2.1.1" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-core:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.33" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-context:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:2.1.2" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-observation:1.11.5" level="project" />
+++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.4.11" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.20.0" level="project" />
+++    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:2.0.9" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-crypto:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-commons:1.11.5" level="project" />
+++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.4.11" level="project" />
+++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:2.0.9" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.20.0" level="project" />
+++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.angus:angus-activation:2.0.1" level="project" />
+++  </component>
++ </module>
++\ No newline at end of file
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Users.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport java.util.Objects;\r\n\r\npublic class Users {\r\n\r\n    private int id;\r\n    private String email;\r\n    private String password;\r\n\r\n    public Users(int id,String email,String password){\r\n        this.id=id;\r\n        this.email=email;\r\n        this.password=password;\r\n    }\r\n\r\n    public int getId(){\r\n        return id;\r\n    }\r\n    public String getEmail(){\r\n        return  email;\r\n    }\r\n    public String getPassword(){\r\n        return password;\r\n    }\r\n    public void changePassword(String newPassword){\r\n        this.password=newPassword;\r\n    }\r\n    public String information(){\r\n        return \"User{\" + \"id='\" + id + \", username='\"+ \", email='\" + email + '\\'' + '}';\r\n    }\r\n\r\n    @Override\r\n    public int hashCode() {\r\n        this.id=id;\r\n        return Objects.hash(email);\r\n    }\r\n}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java	(date 1701129406619)
++@@ -1,22 +1,15 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import java.util.Objects;
++ 
++ public class Users {
++-
++-    private int id;
++     private String email;
++     private String password;
++ 
++-    public Users(int id,String email,String password){
++-        this.id=id;
+++    public Users(String email,String password){
++         this.email=email;
++         this.password=password;
++     }
++-
++-    public int getId(){
++-        return id;
++-    }
++     public String getEmail(){
++         return  email;
++     }
++@@ -26,13 +19,5 @@
++     public void changePassword(String newPassword){
++         this.password=newPassword;
++     }
++-    public String information(){
++-        return "User{" + "id='" + id + ", username='"+ ", email='" + email + '\'' + '}';
++-    }
++ 
++-    @Override
++-    public int hashCode() {
++-        this.id=id;
++-        return Objects.hash(email);
++-    }
++ }
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport lombok.Getter;\r\n\r\n@Getter\r\npublic final class Word {\r\n    final private String word;\r\n    final private String translate;\r\n    private int num;\r\n\r\n\r\n    public Word() {\r\n        this.word = \"word\";\r\n        this.translate = \"translation\";\r\n        this.num = 0;\r\n    }\r\n    public String getWord(){\r\n        return word;\r\n    }\r\n    public String getTranslate(){\r\n        return  translate;\r\n    }\r\n\r\n    public int getNum(){\r\n        return num;\r\n    }\r\n}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(date 1701129406619)
++@@ -1,19 +1,19 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import lombok.Getter;
++ 
++ @Getter
++-public final class Word {
++-    final private String word;
++-    final private String translate;
+++public class Word {
+++    private String word;
+++    private String translate;
++     private int num;
++ 
++-
++-    public Word() {
++-        this.word = "word";
++-        this.translate = "translation";
++-        this.num = 0;
+++    public Word(String word, String translate, int num) {
+++        this.word = word;
+++        this.translate = translate;
+++        this.num = num;
++     }
+++
++     public String getWord(){
++         return word;
++     }
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_28_11_2023_13_59_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2023_13_59_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2023_13_59_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1701129556574)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2023_13_59_[Changes]/shelved.patch	(date 1701129556574)
+@@ -0,0 +1,196 @@
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Data;\r\n\r\n//@Data\r\n//@AllArgsConstructor\r\n//public class Lessons extends Levels {\r\n//    private String levelNumber;\r\n//    private String levelContent;\r\n//}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Lessons.java	(date 1701129539142)
++@@ -1,11 +1,11 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import lombok.AllArgsConstructor;
++ import lombok.Data;
++ 
++-//@Data
++-//@AllArgsConstructor
++-//public class Lessons extends Levels {
++-//    private String levelNumber;
++-//    private String levelContent;
++-//}
+++@Data
+++@AllArgsConstructor
+++public class Lessons extends Levels {
+++    private String levelNumber;
+++    private String levelContent;
+++}
++Index: .idea/modules/project_oop.main.iml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module version=\"4\">\r\n  <component name=\"AdditionalModuleElements\">\r\n    <content url=\"file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main\" isTestSource=\"false\" generated=\"true\" />\r\n    </content>\r\n  </component>\r\n</module>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/modules/project_oop.main.iml b/.idea/modules/project_oop.main.iml
++--- a/.idea/modules/project_oop.main.iml	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/.idea/modules/project_oop.main.iml	(date 1701129539155)
++@@ -1,8 +1,66 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++-<module version="4">
+++<module external.linked.project.id="project_oop:main" external.linked.project.path="$MODULE_DIR$/../../project_oop" external.root.project.path="$MODULE_DIR$/../../project_oop" external.system.id="GRADLE" external.system.module.group="oop.example" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
++   <component name="AdditionalModuleElements">
++     <content url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main">
++       <sourceFolder url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
++     </content>
++   </component>
+++  <component name="NewModuleRootManager">
+++    <output url="file://$MODULE_DIR$/../../project_oop/build/classes/java/main" />
+++    <exclude-output />
+++    <content url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main">
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+++    </content>
+++    <content url="file://$MODULE_DIR$/../../project_oop/src/main">
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/src/main/java" isTestSource="false" />
+++      <sourceFolder url="file://$MODULE_DIR$/../../project_oop/src/main/resources" type="java-resource" />
+++    </content>
+++    <orderEntry type="inheritedJdk" />
+++    <orderEntry type="sourceFolder" forTests="false" />
+++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.30" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-mail:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.eclipse.angus:jakarta.mail:1.1.0" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-web:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:3.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:2.1.1" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-core:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.33" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-context:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:2.1.2" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:10.1.15" level="project" />
+++    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-observation:1.11.5" level="project" />
+++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.4.11" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.20.0" level="project" />
+++    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:2.0.9" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:6.0.13" level="project" />
+++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-crypto:6.1.5" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.15.3" level="project" />
+++    <orderEntry type="library" name="Gradle: io.micrometer:micrometer-commons:1.11.5" level="project" />
+++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.4.11" level="project" />
+++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:2.0.9" level="project" />
+++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.20.0" level="project" />
+++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.eclipse.angus:angus-activation:2.0.1" level="project" />
+++  </component>
++ </module>
++\ No newline at end of file
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Users.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport java.util.Objects;\r\n\r\npublic class Users {\r\n\r\n    private int id;\r\n    private String email;\r\n    private String password;\r\n\r\n    public Users(int id,String email,String password){\r\n        this.id=id;\r\n        this.email=email;\r\n        this.password=password;\r\n    }\r\n\r\n    public int getId(){\r\n        return id;\r\n    }\r\n    public String getEmail(){\r\n        return  email;\r\n    }\r\n    public String getPassword(){\r\n        return password;\r\n    }\r\n    public void changePassword(String newPassword){\r\n        this.password=newPassword;\r\n    }\r\n    public String information(){\r\n        return \"User{\" + \"id='\" + id + \", username='\"+ \", email='\" + email + '\\'' + '}';\r\n    }\r\n\r\n    @Override\r\n    public int hashCode() {\r\n        this.id=id;\r\n        return Objects.hash(email);\r\n    }\r\n}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Users.java	(date 1701129539163)
++@@ -1,22 +1,15 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import java.util.Objects;
++ 
++ public class Users {
++-
++-    private int id;
++     private String email;
++     private String password;
++ 
++-    public Users(int id,String email,String password){
++-        this.id=id;
+++    public Users(String email,String password){
++         this.email=email;
++         this.password=password;
++     }
++-
++-    public int getId(){
++-        return id;
++-    }
++     public String getEmail(){
++         return  email;
++     }
++@@ -26,13 +19,5 @@
++     public void changePassword(String newPassword){
++         this.password=newPassword;
++     }
++-    public String information(){
++-        return "User{" + "id='" + id + ", username='"+ ", email='" + email + '\'' + '}';
++-    }
++ 
++-    @Override
++-    public int hashCode() {
++-        this.id=id;
++-        return Objects.hash(email);
++-    }
++ }
++Index: project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+>package oop.example.project_oop.Classes;\r\n\r\nimport lombok.Getter;\r\n\r\n@Getter\r\npublic final class Word {\r\n    final private String word;\r\n    final private String translate;\r\n    private int num;\r\n\r\n\r\n    public Word() {\r\n        this.word = \"word\";\r\n        this.translate = \"translation\";\r\n        this.num = 0;\r\n    }\r\n    public String getWord(){\r\n        return word;\r\n    }\r\n    public String getTranslate(){\r\n        return  translate;\r\n    }\r\n\r\n    public int getNum(){\r\n        return num;\r\n    }\r\n}\r\n
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java
++--- a/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(revision 3901a9f38189076349c070cd21ad9445bf6b2f56)
+++++ b/project_oop/src/main/java/oop/example/project_oop/Classes/Word.java	(date 1701129539171)
++@@ -1,19 +1,19 @@
++-package oop.example.project_oop.Classes;
+++package oop.example.project_oop.classes;
++ 
++ import lombok.Getter;
++ 
++ @Getter
++-public final class Word {
++-    final private String word;
++-    final private String translate;
+++public class Word {
+++    private String word;
+++    private String translate;
++     private int num;
++ 
++-
++-    public Word() {
++-        this.word = "word";
++-        this.translate = "translation";
++-        this.num = 0;
+++    public Word(String word, String translate, int num) {
+++        this.word = word;
+++        this.translate = translate;
+++        this.num = num;
++     }
+++
++     public String getWord(){
++         return word;
++     }

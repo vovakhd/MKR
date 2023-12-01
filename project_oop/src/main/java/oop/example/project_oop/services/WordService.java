@@ -15,6 +15,12 @@ public class WordService {
     private String level;   //треба level в якому він знаходиться
     private int lesson;     //треба lesson в якому він знаходиться
 
+    public WordService(String email,String level,int lesson) {
+        this.email = email;
+        this.level = level;
+        this.lesson = lesson;
+    }
+
     public WordService(){
         try {
             this.wordService = create_Word(level, lesson, email);
