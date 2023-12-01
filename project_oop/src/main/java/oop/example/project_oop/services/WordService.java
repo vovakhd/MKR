@@ -1,6 +1,5 @@
 package oop.example.project_oop.services;
 
-import oop.example.project_oop.classes.Users;
 import oop.example.project_oop.classes.Word;
 import org.springframework.stereotype.Service;
 
