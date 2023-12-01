@@ -71,7 +71,6 @@ public class Lessons {
             // Округлення до 2 знаків після коми
             DecimalFormat decimalFormat = new DecimalFormat("#.##");
             String formattedProgress = decimalFormat.format(progressPercentage);
-
             // Заміна коми на крапку (для запобігання NumberFormatException)
             formattedProgress = formattedProgress.replace(',', '.');
             return Double.parseDouble(formattedProgress);
@@ -81,7 +80,7 @@ public class Lessons {
     }
 
     // Функція для зчитування даних з CSV-файлу
-    private List<String[]> readCSV() throws IOException, CsvException {
+    protected List<String[]> readCSV() throws IOException, CsvException {
         String file = "vocabulary.csv";
         List<String[]> words = new ArrayList<>();
         try (CSVReader csvReader = new CSVReaderBuilder(new FileReader(file)).build()) {
