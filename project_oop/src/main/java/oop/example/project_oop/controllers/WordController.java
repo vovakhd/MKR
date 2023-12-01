@@ -22,6 +22,7 @@ public class WordController {
         this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
         this.Email = auth.getName();
         this.wordService = new WordService();
+        wordService.generateNewWord(Level,Lesson,auth.getName());
         if(wordService.getWord().equals("1")){
             return "allwords";
         }

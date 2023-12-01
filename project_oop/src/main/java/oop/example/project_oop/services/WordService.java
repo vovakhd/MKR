@@ -1,5 +1,6 @@
 package oop.example.project_oop.services;
 
+import lombok.Getter;
 import oop.example.project_oop.classes.Word;
 import org.springframework.stereotype.Service;
 
@@ -9,23 +10,21 @@ import static oop.example.project_oop.Data.WordData.create_Word;
 import static oop.example.project_oop.Data.WordData.update_indikator;
 @Service
 public class WordService {
-    private Word wordService ;
-    public String getTranslate(){
-        return wordService.getTranslate();
-    }
+    private Word word_now ;
 
-    public String getWord(){
-        return wordService.getWord();
+    public String getWord() {
+        return word_now.getWord();
     }
-
+    public String getTranslate() {
+        return word_now.getTranslate();
+    }
     public int getIndicator() {
-        return  wordService.getIndicator();
+        return word_now.getIndicator();
     }
-
     public void update_id(int update, String email) {
-        wordService.setIndicator(wordService.getIndicator()+update);
+        word_now.setIndicator(word_now.getIndicator()+update);
         try {
-            update_indikator(wordService.getWord(),email,update);
+            update_indikator(word_now.getWord(),email,update);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -33,7 +32,7 @@ public class WordService {
 
     public void generateNewWord(String level,int lesson,String email) {
         try {
-            wordService = create_Word(level, lesson, email);
+            word_now = create_Word(level, lesson, email);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
