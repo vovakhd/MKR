@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Random;
 
 public class WordData {
+
+    /**Return a new word from the vocabulary
+     * depending on current user, level & lesson*/
     public static Word create_Word(String level,int lesson,String email)  throws IOException{
         String file = "vocabulary.csv";
         BufferedReader reader = null;

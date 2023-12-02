@@ -12,16 +12,14 @@ import org.springframework.ui.Model;
 public class WordController {
     String Level;
     int Lesson;
-    String Email;
     private WordService wordService;
 
     @GetMapping("")
-    public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
+    public String pageword(Authentication auth, @PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         this.Level = String.valueOf(level.charAt(level.length()-1));
         this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
-        this.Email = auth.getName();
         this.wordService = new WordService();
         wordService.generateNewWord(Level,Lesson,auth.getName());
         if(wordService.getWord().equals("1")){

@@ -30,6 +30,8 @@ public class WordService {
         }
     }
 
+    /**Generate a new word from the vocabulary
+     * depending on current user, level & lesson*/
     public void generateNewWord(String level,int lesson,String email) {
         try {
             word_now = create_Word(level, lesson, email);
