@@ -32,6 +32,7 @@ public class LevelController {
     }
     @GetMapping("/Levels")
     public String levels(Model model, Authentication auth) {
+        model.addAttribute("email",auth.getName());
         model.addAttribute("progressA",Levels.calculateLevelProgress(auth.getName(),"A"));
         model.addAttribute("progressB",Levels.calculateLevelProgress(auth.getName(),"B"));
         return "levels";
