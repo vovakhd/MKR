@@ -5,17 +5,12 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
 
-
-@Setter
-@Getter
 @Entity
 public class Lessons {
     private String numberOfLesson;
@@ -92,6 +87,22 @@ public class Lessons {
             words.addAll(csvReader.readAll());
         }
         return words;
+    }
+
+    public void setNumberOfLesson(String numberOfLesson) {
+        this.numberOfLesson = numberOfLesson;
+    }
+
+    public void setLessonProgress(String lessonProgress) {
+        this.lessonProgress = lessonProgress;
+    }
+
+    public String getNumberOfLesson() {
+        return numberOfLesson;
+    }
+
+    public String getLessonProgress() {
+        return lessonProgress;
     }
 
     public void setId(Long id) {

@@ -5,17 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
-
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Setter
-@Getter
 public class Users {
 
     @Id
@@ -25,6 +20,10 @@ public class Users {
     private String password;
 
     public Users() {}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Users(String email, String password) {
         this.email = email;
@@ -51,5 +50,8 @@ public class Users {
     }
 
     public void setPassword(String password) { this.password = password;
+    }
+
+    public void setEmail(String email) { this.email = email;
     }
 }

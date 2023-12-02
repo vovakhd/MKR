@@ -27,4 +27,16 @@ public class LessonsTest {
             Lessons.readCSV();
         });
     }
+
+    @Test
+    public void testLessonsFields() {
+        Lessons lesson = new Lessons();
+        lesson.setNumberOfLesson("Lesson 1");
+        lesson.setLessonProgress("75%");
+        lesson.setId(1L);
+
+        assertEquals("Lesson 1", lesson.getNumberOfLesson());
+        assertEquals("75%", lesson.getLessonProgress());
+        assertEquals(1L, lesson.getId());
+    }
 }
