@@ -9,10 +9,7 @@ import org.supercsv.prefs.CsvPreference;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class UserData {
 
@@ -116,6 +113,47 @@ public class UserData {
             if (reader != null) {
                 reader.close();
             }
+            if (writer != null) {
+                writer.close();
+            }
+        }
+    }
+    public static void delete_last_user() throws IOException {
+        String file = "vocabulary.csv";
+        BufferedReader reader = null;
+        BufferedWriter writer = null;
+        String line = "";
+        String[] row = null;
+        List<String[]> fileData = new ArrayList<>();
+        //зчитування з файлу
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            //зчитування в fileData
+            while ((line = reader.readLine()) != null) {
+                row = line.split(",");
+                fileData.add(row);
+            }
+
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+        //запис назад у файл
+        row=fileData.get(0);
+        row= Arrays.copyOfRange(row, 0, row.length - 1);
+
+        try {
+            writer = new BufferedWriter(new FileWriter(file));
+            writer.write(String.join(",", row) + "\n");
+            for (int i = 1;i < fileData.size(); i++){
+                writer.write(fileData.get(i)[0]+","+fileData.get(i)[1]+","+fileData.get(i)[2]+","+fileData.get(i)[3]);
+                for (int j = 4; j < fileData.get(i).length-1; j++) {
+                    writer.write(","+Integer.parseInt(fileData.get(i)[j]));
+                }
+                writer.write("\n");
+            }
+        }finally {
             if (writer != null) {
                 writer.close();
             }
