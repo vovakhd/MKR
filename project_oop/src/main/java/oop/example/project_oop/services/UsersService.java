@@ -61,9 +61,7 @@ public class UsersService {
             }
             return true;
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } finally { //close file
+        }finally { //close file
             if (Reader != null)
                 Reader.close();
         }

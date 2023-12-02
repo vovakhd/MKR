@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import java.io.IOException;
+
 
 @Controller
 @RequestMapping("/{level}/{lessons}/pageword")
@@ -15,7 +17,7 @@ public class WordController {
     private WordService wordService;
 
     @GetMapping("")
-    public String pageword(Authentication auth, @PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
+    public String pageword(Authentication auth, @PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) throws IOException {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         this.Level = String.valueOf(level.charAt(level.length()-1));
@@ -30,7 +32,7 @@ public class WordController {
     }
 
     @PostMapping("/Click")
-    public String Click(Authentication auth,@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson, Model model) {
+    public String Click(Authentication auth,@RequestParam String button,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson, Model model) throws IOException {
         if ("yes".equals(button)) {
             wordService.update_id(1, auth.getName());
         } else if ("no".equals(button)) {
@@ -56,7 +58,7 @@ public class WordController {
     }
 
     @PostMapping("/Know")
-    public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
+    public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) throws IOException {
         wordService.update_id(5 - wordService.getIndicator(), auth.getName());
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);

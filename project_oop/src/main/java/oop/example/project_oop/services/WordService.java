@@ -21,22 +21,14 @@ public class WordService {
     public int getIndicator() {
         return word_now.getIndicator();
     }
-    public void update_id(int update, String email) {
+    public void update_id(int update, String email) throws IOException {
         word_now.setIndicator(word_now.getIndicator()+update);
-        try {
-            update_indikator(word_now.getWord(),email,update);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        update_indikator(word_now.getWord(),email,update);
     }
 
     /**Generate a new word from the vocabulary
      * depending on current user, level & lesson*/
-    public void generateNewWord(String level,int lesson,String email) {
-        try {
-            word_now = create_Word(level, lesson, email);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void generateNewWord(String level,int lesson,String email) throws IOException {
+        word_now = create_Word(level, lesson, email);
     }
 }
