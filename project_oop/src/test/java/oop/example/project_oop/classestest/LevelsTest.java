@@ -9,6 +9,6 @@ public class LevelsTest {
     @Test
     public void testCalculateLevelProgress() {
         double levelProgress = Levels.calculateLevelProgress("user@mail", "B");
-        assertEquals(40.74, levelProgress, 0.01);
+        assertEquals(48.15, levelProgress, 0.01);
     }
 }

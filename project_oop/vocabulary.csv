@@ -47,19 +47,19 @@ A,2,to ride,їздити,-1
 A,2,outside,надворі,-1
 A,2,inside,в приміщенні,-1
 A,2,busy,зайнятий,-1
-A,3,intelligent,розумний,-1
+A,3,intelligent,розумний,5
 A,3,kind,ласкавий,5
 A,3,talkative,балакучий,5
 A,3,friendly,дружній,5
-A,3,funny,веселий,-1
+A,3,funny,веселий,5
 A,3,stupid,дурний,5
 A,3,serious,серйозний,5
-A,3,unfriendly,недружній,-2
+A,3,unfriendly,недружній,5
 A,3,quiet,тихий,5
 A,3,unkind,неласкавий,5
 A,3,sometimes,іноді,5
 A,3,usually,зазвичай,5
-A,3,often,часто,0
+A,3,often,часто,5
 A,3,hardly ever,вкрай рідко,5
 B,1,by mistake,помилково,3
 B,1,on someone's own,на власний розсуд,5
@@ -80,11 +80,11 @@ B,2,to argue,сперечатися,-1
 B,2,to warn,попередити,-1
 B,2,to apologise,вибачитися,5
 B,3,brilliant,блискучий,5
-B,3,terrible,жахливий,-3
+B,3,terrible,жахливий,5
 B,3,furious,розлючений,5
 B,3,enormous,величезний,5
 B,3,tiny,крихітний,5
-B,3,impossible,неможливо,7
+B,3,impossible,неможливо,5
 B,3,exhausted,виснажений,5
-B,3,amazing,дивовижний,1
-B,3,fascinating,захоплюючий,-1
+B,3,amazing,дивовижний,5
+B,3,fascinating,захоплюючий,2
