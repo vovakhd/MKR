@@ -65,34 +65,6 @@ public class UserData {
         }
     }
 
-    public static List<String> readUsersEmailorPassword(int num) throws IOException {
-        String file = "users.csv";
-        BufferedReader reader = null;
-        String line = "";
-        List<String> users_Email = new ArrayList<>();
-        List<String> users_Password= new ArrayList<>();
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            line = reader.readLine();      //пропуск заголовків
-            while((line = reader.readLine()) != null) {
-                String[] row = line.split(",");
-                users_Email.add(row[0]);
-                users_Password.add(row[1]);
-
-            }
-        }finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        if(num==1) {
-            return users_Email;
-        }else{
-            return  users_Password;
-        }
-
-    }
-
     public static String Email_Password(String email) throws IOException {
         String file = "users.csv";
         BufferedReader reader = null;
@@ -136,7 +108,7 @@ public class UserData {
                 users_Email.add(row[0]);
             }
             writer = new BufferedWriter(new FileWriter(file));
-            writer.write("email" + "," + "password" + "," + "id" + "\n");
+            writer.write("email" + "," + "password" +"\n");
             for(int i=0;i<users_Email.size();i++){
                 writer.write(users_Email.get(i) + "," + users_Password.get(i) +  "\n");
             }
