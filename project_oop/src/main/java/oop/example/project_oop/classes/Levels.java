@@ -60,14 +60,4 @@ public class Levels extends Lessons {
             return 0.0;
         }
     }
-
-    public static void main(String[] args) {
-        Levels levels = new Levels();
-        try {
-            double averageProgress = calculateLevelProgress("user@mail", "A");
-            System.out.println("Level progress: " + averageProgress + "%");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
