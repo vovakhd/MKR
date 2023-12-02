@@ -8,23 +8,24 @@ import org.springframework.ui.Model;
 
 
 @Controller
-@RequestMapping("/{level}/{lesson}/pageword")
+@RequestMapping("/{level}/{lessons}/pageword")
 public class WordController {
+    String Level;
+    int Lesson;
     private WordService wordService;
 
     @GetMapping("")
-    public String pageword(Authentication auth,@PathVariable("level") String level, @PathVariable ("lesson") String lesson, Model model) {
+    public String pageword(Authentication auth, @PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         this.Level = String.valueOf(level.charAt(level.length()-1));
         this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
-        this.Email = auth.getName();
         this.wordService = new WordService();
         wordService.generateNewWord(Level,Lesson,auth.getName());
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 
@@ -41,14 +42,14 @@ public class WordController {
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 
     @PostMapping("/Result")
-    public String Result(@PathVariable ("level") String level,@PathVariable ("lesson") String lesson,Model model) {
-        model.addAttribute("word", wordService.getWord_now().getWord());
-        model.addAttribute("translate", wordService.getWord_now().getTranslate());
+    public String Result(@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
+        model.addAttribute("word", wordService.getWord());
+        model.addAttribute("translate", wordService.getTranslate());
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         return "answer";
@@ -63,7 +64,7 @@ public class WordController {
         if(wordService.getWord().equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord_now().getWord());
+        model.addAttribute("word", wordService.getWord());
         return "pageword";
     }
 

@@ -4,7 +4,7 @@
 >
 <head>
   <meta charset="UTF-8">
-  <title>Login System</title>
+  <title>Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" th:href="@{/index}">Spring Security Custom Login Example</a>
+    <a class="navbar-brand" th:href="@{/welcome}">VocabLite</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -67,11 +67,12 @@
               <button type="submit" class="btn btn-primary" >Submit</button>
             </div>
           </form>
+          <div> <a th:href="@{/registration}" class="btn btn-secondary btn-sm" tabindex="-1" role="button" aria-disabled="true">I don't have account</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<p><a th:href="@{/registration}">  I don't have account!</a></p>
 </body>
 </html>
