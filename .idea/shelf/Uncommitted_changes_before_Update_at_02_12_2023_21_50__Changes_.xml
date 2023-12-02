@@ -1,0 +1,114 @@
+<changelist name="Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]" date="1701503417270" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 02.12.2023 21:50 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/Data/UserData.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/Data/UserData.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/UserData.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/compileTransaction/stash-dir/UserController.class.uniqueId1" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/classes/Lessons.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/classes/Lessons.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/Lessons.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/compileTransaction/stash-dir/Levels.class.uniqueId0" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/compileTransaction/stash-dir/Lessons.class.uniqueId4" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/buildOutputCleanup.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/test-results/test/binary/output.bin" />
+    <option name="AFTER_PATH" value="project_oop/build/test-results/test/binary/output.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/output.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="project_oop/build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/jacoco/test.exec" />
+    <option name="AFTER_PATH" value="project_oop/build/jacoco/test.exec" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/test.exec" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.bin" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/test-results/test/binary/results.bin" />
+    <option name="AFTER_PATH" value="project_oop/build/test-results/test/binary/results.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/results.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileTestJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="project_oop/build/tmp/compileTestJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/previous-compilation-data1.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/test/oop/example/project_oop/classestest/LevelsTest.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/test/oop/example/project_oop/classestest/LevelsTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/LevelsTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/test/oop/example/project_oop/UserDataTest.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/test/oop/example/project_oop/UserDataTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/UserDataTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/executionHistory.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/compileTransaction/stash-dir/WordController.class.uniqueId3" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.bin" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/executionHistory/executionHistory.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/executionHistory.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/classes/Levels.class" />
+    <option name="AFTER_PATH" value="project_oop/build/classes/java/main/oop/example/project_oop/classes/Levels.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/Levels.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/tmp/compileJava/compileTransaction/stash-dir/LevelController.class.uniqueId2" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.lock" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/fileHashes/fileHashes.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/fileHashes.lock" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/build/test-results/test/binary/output.bin.idx" />
+    <option name="AFTER_PATH" value="project_oop/build/test-results/test/binary/output.bin.idx" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/output.bin.idx" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="project_oop/.gradle/8.4/fileHashes/resourceHashesCache.bin" />
+    <option name="AFTER_PATH" value="project_oop/.gradle/8.4/fileHashes/resourceHashesCache.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_12_2023_21_50_[Changes]/resourceHashesCache.bin" />
+  </binary>
+</changelist>
