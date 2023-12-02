@@ -1,5 +1,6 @@
 package oop.example.project_oop.controllers;
 
+import oop.example.project_oop.classes.Levels;
 import oop.example.project_oop.classes.Users;
 import oop.example.project_oop.services.UsersService;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,8 @@ public class UserController {
 
     @GetMapping("/home")
     public String home(Authentication auth, Model model) {
-        model.addAttribute("name", auth.getName());
+        model.addAttribute("progressA", Levels.calculateLevelProgress(auth.getName(),"A"));
+        model.addAttribute("progressB",Levels.calculateLevelProgress(auth.getName(),"B"));
         return "levels";
     }
 
