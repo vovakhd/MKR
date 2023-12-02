@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -18,8 +19,14 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public String welcome1(){
-        return "welcome";
+    public String welcome1(Authentication auth){
+        if(auth == null)
+            return "welcome";
+        else return "levels";
+    }
+    @GetMapping("/about")
+    public String about(){
+        return "about";
     }
 
     @GetMapping("/login")
@@ -34,6 +41,7 @@ public class UserController {
 
     @GetMapping("/home")
     public String home(Authentication auth, Model model) {
+        auth.getName();
         model.addAttribute("progressA", Levels.calculateLevelProgress(auth.getName(),"A"));
         model.addAttribute("progressB",Levels.calculateLevelProgress(auth.getName(),"B"));
         return "levels";
@@ -44,7 +52,6 @@ public class UserController {
         model.addAttribute("user", new Users());
         return "registration";
     }
-
     @PostMapping("/registration")
     public String newUser(@ModelAttribute Users user, Model model) throws IOException {
         model.addAttribute("user", user);
