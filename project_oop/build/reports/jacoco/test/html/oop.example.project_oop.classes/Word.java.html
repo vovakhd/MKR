@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="uk"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Word.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_oop</a> &gt; <a href="index.source.html" class="el_package">oop.example.project_oop.classes</a> &gt; <span class="el_source">Word.java</span></div><h1>Word.java</h1><pre class="source lang-java linenums">package oop.example.project_oop.classes;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Getter;
 
 @Getter
+@Entity
 public class Word {
     private String word;
     private String translate;
     private int indicator;
+    @Id
+<span class="nc" id="L15">    private Long id;</span>
 
-<span class="nc" id="L11">    public Word(String word,String translate,int indicator) {</span>
-<span class="nc" id="L12">        this.word=word;</span>
-<span class="nc" id="L13">        this.translate=translate;</span>
-<span class="nc" id="L14">        this.indicator=indicator;</span>
+<span class="fc" id="L17">    public Word(String word,String translate,int indicator, Long User) {</span>
+<span class="fc" id="L18">        this.word=word;</span>
+<span class="fc" id="L19">        this.translate=translate;</span>
+<span class="fc" id="L20">        this.indicator=indicator;</span>
+<span class="fc" id="L21">        this.id = User;</span>
 
-<span class="nc" id="L16">    }</span>
+<span class="fc" id="L23">    }</span>
+
+<span class="nc" id="L25">    public Word() {</span>
+
+<span class="nc" id="L27">    }</span>
 
     public String getWord() {
-<span class="nc" id="L19">        return word;</span>
+<span class="fc" id="L30">        return word;</span>
     }
     public String getTranslate() {
-<span class="nc" id="L22">        return translate;</span>
+<span class="fc" id="L33">        return translate;</span>
     }
     public int getIndicator() {
-<span class="nc" id="L25">        return indicator;</span>
+<span class="fc" id="L36">        return indicator;</span>
     }
     public void setIndicator(int indicator) {
-<span class="nc" id="L28">        this.indicator = indicator;</span>
-<span class="nc" id="L29">    }</span>
+<span class="fc" id="L39">        this.indicator = indicator;</span>
+<span class="fc" id="L40">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

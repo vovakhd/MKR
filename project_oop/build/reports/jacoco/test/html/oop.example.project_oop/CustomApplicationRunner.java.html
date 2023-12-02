@@ -10,14 +10,14 @@ import oop.example.project_oop.services.UsersService;
 public class CustomApplicationRunner implements ApplicationRunner {
 private final UsersService usersService;
 
-<span class="nc" id="L13">    public CustomApplicationRunner(UsersService usersService) {</span>
-<span class="nc" id="L14">        this.usersService = usersService;</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L13">    public CustomApplicationRunner(UsersService usersService) {</span>
+<span class="fc" id="L14">        this.usersService = usersService;</span>
+<span class="fc" id="L15">    }</span>
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-<span class="nc" id="L19">        System.out.println(&quot;APPLICATION IS WORKING!&quot;);</span>
-<span class="nc" id="L20">        usersService.loadUsersFromFile(); //Ð·Ð°Ð²Ð°Ð½Ñ‚Ð°Ð¶ÑƒÑ” ÐºÐ¾Ñ€Ð¸Ñ�Ñ‚ÑƒÐ²Ð°Ñ‡Ñ–Ð² Ð· Ñ„Ð°Ð¹Ð»Ñƒ Ñƒ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ñ–Ð¹</span>
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L19">        System.out.println(&quot;APPLICATION IS WORKING!&quot;);</span>
+<span class="fc" id="L20">        usersService.loadUsersFromFile(); //Р·Р°РІР°РЅС‚Р°Р¶СѓС” РєРѕСЂРёСЃС‚СѓРІР°С‡С–РІ Р· С„Р°Р№Р»Сѓ Сѓ СЂРµРїРѕР·РёС‚РѕСЂС–Р№</span>
+<span class="fc" id="L21">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

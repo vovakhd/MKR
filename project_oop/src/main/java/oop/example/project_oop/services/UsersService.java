@@ -69,6 +69,8 @@ public class UsersService {
         }
 
     }
+
+    /**Повертає ID користувача за його поштою*/
 public long findUserId(String mail){
         return repository.findByEmail(mail).getId();
 }
