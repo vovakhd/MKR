@@ -14,7 +14,7 @@ public class Levels extends Lessons {
     private String level;
     private String levelProgress;
     private int lessonsNumber;
-    public double calculateLevelProgress(String userColumn, String targetLevel) {
+    public static double calculateLevelProgress(String userColumn, String targetLevel) {
         double totalProgress = 0.0;
         int totalLessons = 0;
         try {
@@ -64,7 +64,7 @@ public class Levels extends Lessons {
     public static void main(String[] args) {
         Levels levels = new Levels();
         try {
-            double averageProgress = levels.calculateLevelProgress("user@mail", "A");
+            double averageProgress = calculateLevelProgress("user@mail", "A");
             System.out.println("Level progress: " + averageProgress + "%");
         } catch (Exception e) {
             e.printStackTrace();

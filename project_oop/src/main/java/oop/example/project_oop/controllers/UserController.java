@@ -1,6 +1,6 @@
 package oop.example.project_oop.controllers;
 
-import lombok.AllArgsConstructor;
+import oop.example.project_oop.classes.Levels;
 import oop.example.project_oop.classes.Users;
 import oop.example.project_oop.services.UsersService;
 import org.springframework.stereotype.Controller;
@@ -10,9 +10,12 @@ import org.springframework.security.core.Authentication;
 import java.io.IOException;
 
 @Controller
-@AllArgsConstructor
 public class UserController {
     private final UsersService usersService;
+
+    public UserController(UsersService usersService) {
+        this.usersService = usersService;
+    }
 
     @GetMapping("/")
     public String welcome1(){
@@ -31,7 +34,8 @@ public class UserController {
 
     @GetMapping("/home")
     public String home(Authentication auth, Model model) {
-        model.addAttribute("name", auth.getName());
+        model.addAttribute("progressA", Levels.calculateLevelProgress(auth.getName(),"A"));
+        model.addAttribute("progressB",Levels.calculateLevelProgress(auth.getName(),"B"));
         return "levels";
     }
 
