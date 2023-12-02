@@ -11,4 +11,16 @@ public class LevelsTest {
         double levelProgress = Levels.calculateLevelProgress("user@mail", "B");
         assertEquals(48.15, levelProgress, 0.01);
     }
+
+    @Test
+    public void testLevelFields() {
+        Levels level = new Levels();
+        level.setLevel("A");
+        level.setLevelProgress("50%");
+        level.setLessonsNumber(5);
+
+        assertEquals("A", level.getLevel());
+        assertEquals("50%", level.getLevelProgress());
+        assertEquals(5, level.getLessonsNumber());
+    }
 }

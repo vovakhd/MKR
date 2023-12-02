@@ -2,18 +2,38 @@ package oop.example.project_oop.classes;
 
 import com.opencsv.exceptions.CsvException;
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
 import java.util.List;
 import java.text.DecimalFormat;
 
-@Setter
-@Getter
 @Entity
 public class Levels extends Lessons {
     private String level;
     private String levelProgress;
     private int lessonsNumber;
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public void setLevelProgress(String levelProgress) {
+        this.levelProgress = levelProgress;
+    }
+
+    public void setLessonsNumber(int lessonsNumber) {
+        this.lessonsNumber = lessonsNumber;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public String getLevelProgress() {
+        return levelProgress;
+    }
+
+    public int getLessonsNumber() {
+        return lessonsNumber;
+    }
     public static double calculateLevelProgress(String userColumn, String targetLevel) {
         double totalProgress = 0.0;
         int totalLessons = 0;
