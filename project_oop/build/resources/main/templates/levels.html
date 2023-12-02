@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levels</title>
+    <style>
+        .level-container {
+            display: flex;
+        }
+         .level-info span {
+            margin-left: 10px;
+         }
+    </style>
 </head>
 <body>
 <p>Сторінка рівнів</p>
-<a class="p-2 text-dark" href="/levelA">Рівень A</a>
-<p></p>
-<a class="p-2 text-dark" href="/levelB">Рівень B</a>
+    <div class="level-container">
+        <div class="level-info">
+            <a class="p-2 text-dark" href="/levelA">Рівень A</a>
+            <span th:text="'Прогрес: ' + ${progressA} + '%'"></span>
+        </div>
+    </div>
+    <p></p>
+    <div class="level-container">
+        <div class="level-info">
+            <a class="p-2 text-dark" href="/levelB">Рівень B</a>
+            <span th:text="'Прогрес: ' + ${progressB} + '%'"></span>
+        </div>
+    </div>
 </body>
 </html>

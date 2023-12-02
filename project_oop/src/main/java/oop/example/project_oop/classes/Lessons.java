@@ -5,17 +5,12 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
 
-
-@Setter
-@Getter
 @Entity
 public class Lessons {
     private String numberOfLesson;
@@ -80,7 +75,7 @@ public class Lessons {
     }
 
     // Функція для зчитування даних з CSV-файлу
-    protected static List<String[]> readCSV() throws IOException, CsvException {
+    public static List<String[]> readCSV() throws IOException, CsvException {
         String file = "vocabulary.csv";
         List<String[]> words = new ArrayList<>();
         try (CSVReader csvReader = new CSVReaderBuilder(new FileReader(file)).build()) {
@@ -93,14 +88,21 @@ public class Lessons {
         }
         return words;
     }
-    public static void main(String[] args) {
-        Lessons lessons = new Lessons();
-        try {
-            double progress = calculateProgress("NEWuser", "A", 2);
-            System.out.println("Progress: " + progress + "%");
-        } catch (IOException | CsvException e) {
-            e.printStackTrace();
-        }
+
+    public void setNumberOfLesson(String numberOfLesson) {
+        this.numberOfLesson = numberOfLesson;
+    }
+
+    public void setLessonProgress(String lessonProgress) {
+        this.lessonProgress = lessonProgress;
+    }
+
+    public String getNumberOfLesson() {
+        return numberOfLesson;
+    }
+
+    public String getLessonProgress() {
+        return lessonProgress;
     }
 
     public void setId(Long id) {

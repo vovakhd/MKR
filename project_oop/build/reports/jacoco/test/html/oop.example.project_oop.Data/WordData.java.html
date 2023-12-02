@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="uk"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WordData.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">project_oop</a> &gt; <a href="index.source.html" class="el_package">oop.example.project_oop.Data</a> &gt; <span class="el_source">WordData.java</span></div><h1>WordData.java</h1><pre class="source lang-java linenums">package oop.example.project_oop.Data;
+import oop.example.project_oop.classes.Word;
+import org.supercsv.io.CsvMapReader;
+import org.supercsv.io.ICsvMapReader;
+import org.supercsv.prefs.CsvPreference;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
+<span class="nc" id="L13">public class WordData {</span>
+    public static Word create_Word(String level,int lesson,String email)  throws IOException{
+<span class="nc" id="L15">        String file = &quot;vocabulary.csv&quot;;</span>
+<span class="nc" id="L16">        BufferedReader reader = null;</span>
+<span class="nc" id="L17">        String line = &quot;&quot;;</span>
+<span class="nc" id="L18">        int index =0;</span>
+<span class="nc" id="L19">        List&lt;String&gt; Word = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L20">        List&lt;String&gt; Translation = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L21">        List&lt;Integer&gt; Indicator= new ArrayList&lt;&gt;();</span>
+        try {
+<span class="nc" id="L23">            reader = new BufferedReader(new FileReader(file));</span>
+<span class="nc" id="L24">            line = reader.readLine();</span>
+<span class="nc" id="L25">            String[] headlines = line.split(&quot;,&quot;);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            for (int i = 0; i &lt; headlines.length; i++) {</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">                if (email.equals(headlines[i])) {</span>
+<span class="nc" id="L28">                    index = i;</span>
+<span class="nc" id="L29">                    break;</span>
+                }
+            }
+<span class="nc bnc" id="L32" title="All 2 branches missed.">            while((line = reader.readLine()) != null) {</span>
+<span class="nc" id="L33">                String[] row = line.split(&quot;,&quot;);</span>
+<span class="nc bnc" id="L34" title="All 6 branches missed.">                if(level.equals(row[0]) &amp;&amp; Integer.parseInt(row[1]) == lesson &amp;&amp; Integer.parseInt(row[index]) &lt; 5) {</span>
+<span class="nc" id="L35">                    Word.add(row[2]);</span>
+<span class="nc" id="L36">                    Translation.add(row[3]);</span>
+<span class="nc" id="L37">                    Indicator.add(Integer.parseInt(row[index]));</span>
+                }
+<span class="nc" id="L39">            }</span>
+        } finally {
+<span class="nc bnc" id="L41" title="All 2 branches missed.">            if (reader != null) {</span>
+<span class="nc" id="L42">                reader.close();</span>
+            }
+        }
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if(Word.isEmpty()){</span>
+<span class="nc" id="L46">            return new Word(&quot;1&quot;, &quot;1&quot;, 1);</span>
+        }
+<span class="nc" id="L48">        Random random = new Random();</span>
+<span class="nc" id="L49">        int word_random=random.nextInt(Word.size());</span>
+<span class="nc" id="L50">        String word=Word.get(word_random);</span>
+<span class="nc" id="L51">        String translate=Translation.get(word_random);</span>
+<span class="nc" id="L52">        int indikator=Indicator.get(word_random);</span>
+<span class="nc" id="L53">        return new Word(word, translate, indikator);</span>
+    }
+
+    public static void update_indikator(String word,String email,int update) throws IOException {
+<span class="nc" id="L57">        String file = &quot;vocabulary.csv&quot;;</span>
+<span class="nc" id="L58">        BufferedReader reader = null;</span>
+<span class="nc" id="L59">        BufferedWriter writer = null;</span>
+<span class="nc" id="L60">        String line = &quot;&quot;;</span>
+<span class="nc" id="L61">        int index_email = 0;</span>
+<span class="nc" id="L62">        int index_word = 1;</span>
+<span class="nc" id="L63">        int indikator = 0;</span>
+<span class="nc" id="L64">        String[] row = null;</span>
+<span class="nc" id="L65">        List&lt;String[]&gt; fileData = new ArrayList&lt;&gt;();</span>
+        //Ð·Ñ‡Ð¸Ñ‚ÑƒÐ²Ð°Ð½Ð½Ñ� Ð· Ñ„Ð°Ð¹Ð»Ñƒ
+        try {
+<span class="nc" id="L68">            reader = new BufferedReader(new FileReader(file));</span>
+<span class="nc" id="L69">            line = reader.readLine();</span>
+<span class="nc" id="L70">            String[] headlines = line.split(&quot;,&quot;);</span>
+<span class="nc" id="L71">            fileData.add(headlines);</span>
+            //Ð¿Ð¾ÑˆÑƒÐº Ñ–Ð½Ð´ÐµÐºÑ�Ð° Ñ�Ñ‚Ð¾Ð²Ð¿Ñ†Ñ�
+<span class="nc bnc" id="L73" title="All 2 branches missed.">            for (int i = 0; i &lt; headlines.length; i++) {</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">                if (email.equals(headlines[i])) {</span>
+<span class="nc" id="L75">                    index_email = i;</span>
+<span class="nc" id="L76">                    break;</span>
+                }
+            }
+            //Ð¿Ð¾ÑˆÑƒÐº Ñ–Ð½Ð´ÐµÐºÑ�Ð° Ñ€Ñ�Ð´ÐºÐ°
+<span class="nc bnc" id="L80" title="All 2 branches missed.">            while ((line = reader.readLine()) != null) {</span>
+<span class="nc" id="L81">                row = line.split(&quot;,&quot;);</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">                if (row[2].equals(word)) {</span>
+<span class="nc" id="L83">                    indikator = Integer.parseInt(row[index_email]);</span>
+<span class="nc" id="L84">                    fileData.add(row);</span>
+<span class="nc" id="L85">                    break;</span>
+                }
+<span class="nc" id="L87">                fileData.add(row);</span>
+<span class="nc" id="L88">                index_word++;</span>
+            }
+            //Ð·Ñ‡Ð¸Ñ‚ÑƒÐ²Ð°Ð½Ð½Ñ� Ð² fileData
+<span class="nc bnc" id="L91" title="All 2 branches missed.">            while ((line = reader.readLine()) != null) {</span>
+<span class="nc" id="L92">                row = line.split(&quot;,&quot;);</span>
+<span class="nc" id="L93">                fileData.add(row);</span>
+            }
+
+        } finally {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">            if (reader != null) {</span>
+<span class="nc" id="L98">                reader.close();</span>
+            }
+        }
+        //Ð·Ð°Ð¼Ñ–Ð½Ð° Ñ€Ñ�Ð´ÐºÐ° Ð½Ð° Ð¾Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ð¹ Ð² fileData
+<span class="nc" id="L102">        row=fileData.get(index_word);</span>
+<span class="nc" id="L103">        row[index_email] = String.valueOf(indikator + update);</span>
+<span class="nc" id="L104">        fileData.set(index_word,row);</span>
+        //Ð·Ð°Ð¿Ð¸Ñ� Ð½Ð°Ð·Ð°Ð´ Ñƒ Ñ„Ð°Ð¹Ð»
+        try {
+<span class="nc" id="L107">            writer = new BufferedWriter(new FileWriter(file));</span>
+<span class="nc" id="L108">            writer.write(String.join(&quot;,&quot;, fileData.get(0)) + &quot;\n&quot;);</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">            for (int i = 1;i &lt; fileData.size(); i++){</span>
+<span class="nc" id="L110">                writer.write(fileData.get(i)[0]+&quot;,&quot;+fileData.get(i)[1]+&quot;,&quot;+fileData.get(i)[2]+&quot;,&quot;+fileData.get(i)[3]);</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">                for (int j = 4; j &lt; fileData.get(i).length; j++) {</span>
+<span class="nc" id="L112">                    writer.write(&quot;,&quot;+Integer.parseInt(fileData.get(i)[j]));</span>
+                }
+<span class="nc" id="L114">                writer.write(&quot;\n&quot;);</span>
+            }
+        }finally {
+<span class="nc bnc" id="L117" title="All 2 branches missed.">            if (writer != null) {</span>
+<span class="nc" id="L118">                writer.close();</span>
+            }
+        }
+<span class="nc" id="L121">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

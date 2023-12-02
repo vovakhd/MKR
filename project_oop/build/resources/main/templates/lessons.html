@@ -3,14 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons</title>
+    <title>Сторінка класів</title>
+    <style>
+        .level-container {
+            display: flex;
+        }
+         .level-info span {
+            margin-left: 10px;
+         }
+    </style>
 </head>
 <body>
 <p th:text="${title}"></p>
-<a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson1/pageword'}">Урок 1</a>
-<p></p>
-<a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson2/pageword'}">Урок 2</a>
-<p></p>
-<a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson3/pageword'}">Урок 3</a>
+    <div class="level-container">
+        <div class="level-info">
+            <a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson1/pageword'}">Урок 1</a>
+            <span th:text="'Прогрес: ' + ${Lesson1} + '%'"></span>
+        </div>
+    </div>
+    <p></p>
+    <div class="level-container">
+        <div class="level-info">
+            <a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson2/pageword'}">Урок 2</a>
+            <span th:text="'Прогрес: ' + ${Lesson2} + '%'"></span>
+        </div>
+    </div>
+    <p></p>
+    <div class="level-container">
+        <div class="level-info">
+            <a class="p-2 text-dark" th:href="@{'/' + ${level} + '/lesson3/pageword'}">Урок 3</a>
+            <span th:text="'Прогрес: ' + ${Lesson3} + '%'"></span>
+        </div>
+    </div>
+
 </body>
 </html>
