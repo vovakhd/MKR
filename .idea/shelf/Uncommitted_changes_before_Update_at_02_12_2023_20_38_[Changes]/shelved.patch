@@ -1,0 +1,16 @@
+Index: project_oop/users.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>email,password\r\nuser@mail,$2a$08$aghNlEMojLAaO6uxxLbN1eagwTc4IlVEqz7Rh.C3qL8W2N.2moDaW\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/project_oop/users.csv b/project_oop/users.csv
+--- a/project_oop/users.csv	(revision 324afb218df8f89d2f296aeb63ceaafe4a1cbc13)
++++ b/project_oop/users.csv	(date 1701498838426)
+@@ -1,2 +1,5 @@
+ email,password
+ user@mail,$2a$08$aghNlEMojLAaO6uxxLbN1eagwTc4IlVEqz7Rh.C3qL8W2N.2moDaW
++null,password123
++user@2,******
++user1,1234
