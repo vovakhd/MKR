@@ -93,15 +93,6 @@ public class Lessons {
         }
         return words;
     }
-    public static void main(String[] args) {
-        Lessons lessons = new Lessons();
-        try {
-            double progress = calculateProgress("user@mail", "A", 2);
-            System.out.println("Progress: " + progress + "%");
-        } catch (IOException | CsvException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void setId(Long id) {
         this.id = id;
