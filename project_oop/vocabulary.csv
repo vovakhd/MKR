@@ -11,7 +11,7 @@ A,1,magazine,журнал,-1
 A,1,lift,ліфт,-1
 A,1,chair,стілець,0
 A,1,bag,сумка,-2
-A,1,notebook,записник,4
+A,1,notebook,записник,5
 A,1,ticket,білет,3
 A,1,table,стіл,1
 A,1,money exchange,обмін валют,0
@@ -31,7 +31,7 @@ A,2,to have dinner,вечеряти,-1
 A,2,usual,звичайний,-1
 A,2,to try,намагатись,-1
 A,2,to cook,готувати їжу,-1
-A,2,to clean,чистити,-1
+A,2,to clean,чистити,5
 A,2,to wash,мити,-1
 A,2,film,фільм,-1
 A,2,to travel,подорожувати,-1
@@ -52,7 +52,7 @@ A,3,kind,ласкавий,5
 A,3,talkative,балакучий,5
 A,3,friendly,дружній,5
 A,3,funny,веселий,-1
-A,3,stupid,дурний,0
+A,3,stupid,дурний,5
 A,3,serious,серйозний,5
 A,3,unfriendly,недружній,-2
 A,3,quiet,тихий,5

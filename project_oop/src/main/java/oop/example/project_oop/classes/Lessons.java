@@ -80,7 +80,7 @@ public class Lessons {
     }
 
     // Функція для зчитування даних з CSV-файлу
-    protected static List<String[]> readCSV() throws IOException, CsvException {
+    public static List<String[]> readCSV() throws IOException, CsvException {
         String file = "vocabulary.csv";
         List<String[]> words = new ArrayList<>();
         try (CSVReader csvReader = new CSVReaderBuilder(new FileReader(file)).build()) {
@@ -96,7 +96,7 @@ public class Lessons {
     public static void main(String[] args) {
         Lessons lessons = new Lessons();
         try {
-            double progress = calculateProgress("NEWuser", "A", 2);
+            double progress = calculateProgress("user@mail", "A", 2);
             System.out.println("Progress: " + progress + "%");
         } catch (IOException | CsvException e) {
             e.printStackTrace();
