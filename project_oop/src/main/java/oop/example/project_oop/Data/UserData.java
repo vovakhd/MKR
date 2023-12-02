@@ -62,29 +62,6 @@ public class UserData {
         }
     }
 
-    public static String Email_Password(String email) throws IOException {
-        String file = "users.csv";
-        BufferedReader reader = null;
-        String line = "";
-        String users_Password = "";
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            line = reader.readLine();      //пропуск заголовків
-            while((line = reader.readLine()) != null) {
-                String[] row = line.split(",");
-                if(email.equals(row[0])){
-                    users_Password=row[1];
-                }
-            }
-        }finally {
-            if (reader != null) {
-                reader.close();
-            }
-        }
-        return users_Password;
-    }
-
-
     public static void changePassword(String email,String password)  throws IOException{
         String file = "users.csv";
         BufferedReader reader = null;

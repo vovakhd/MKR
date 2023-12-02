@@ -20,9 +20,7 @@ public class UserController {
 
     @GetMapping("/")
     public String welcome1(Authentication auth){
-        if(auth == null)
-            return "welcome";
-        else return "levels";
+        return "welcome";
     }
     @GetMapping("/about")
     public String about(){
