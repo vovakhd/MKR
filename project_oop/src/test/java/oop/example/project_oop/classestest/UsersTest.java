@@ -1,6 +1,5 @@
 package oop.example.project_oop.classestest;
 
-import oop.example.project_oop.classes.Lessons;
 import oop.example.project_oop.classes.Role;
 import oop.example.project_oop.classes.Users;
 import org.junit.jupiter.api.Test;

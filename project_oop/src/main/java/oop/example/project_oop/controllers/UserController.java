@@ -1,6 +1,5 @@
 package oop.example.project_oop.controllers;
 
-import oop.example.project_oop.classes.Levels;
 import oop.example.project_oop.classes.Users;
 import oop.example.project_oop.services.UsersService;
 import org.springframework.stereotype.Controller;
@@ -8,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
 import java.io.IOException;
-import java.util.List;
 
 @Controller
 public class UserController {

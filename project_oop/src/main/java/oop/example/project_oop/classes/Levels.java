@@ -1,7 +1,6 @@
 package oop.example.project_oop.classes;
 
 import com.opencsv.exceptions.CsvException;
-import jakarta.persistence.Entity;
 import java.util.List;
 import java.text.DecimalFormat;
 
