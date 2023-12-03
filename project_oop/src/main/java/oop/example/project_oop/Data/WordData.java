@@ -1,13 +1,9 @@
 package oop.example.project_oop.Data;
-import oop.example.project_oop.classes.Word;
-import org.supercsv.io.CsvMapReader;
-import org.supercsv.io.ICsvMapReader;
-import org.supercsv.prefs.CsvPreference;
 
+import oop.example.project_oop.classes.Word;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class WordData {

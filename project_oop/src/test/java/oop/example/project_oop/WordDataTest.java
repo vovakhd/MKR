@@ -1,4 +1,5 @@
 package oop.example.project_oop;
+
 import oop.example.project_oop.classes.Word;
 import org.junit.jupiter.api.Test;
 import static oop.example.project_oop.Data.WordData.create_Word;

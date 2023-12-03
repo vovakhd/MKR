@@ -3,8 +3,6 @@ package oop.example.project_oop.classes;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;

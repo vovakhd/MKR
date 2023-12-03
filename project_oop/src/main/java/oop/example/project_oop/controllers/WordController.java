@@ -1,6 +1,6 @@
 package oop.example.project_oop.controllers;
+
 import oop.example.project_oop.classes.Levels;
-import oop.example.project_oop.services.UsersService;
 import oop.example.project_oop.services.WordService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
