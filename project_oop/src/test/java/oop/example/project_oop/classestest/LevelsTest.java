@@ -8,8 +8,8 @@ public class LevelsTest {
 
     @Test
     public void testCalculateLevelProgress() {
-        double levelProgress = Levels.calculateLevelProgress("user@mail", "B");
-        assertEquals(48.15, levelProgress, 0.01);
+        double levelProgress = Levels.calculateLevelProgress("user@mail", "A");
+        assertEquals(29.03, levelProgress, 0.01);
     }
 
     @Test
