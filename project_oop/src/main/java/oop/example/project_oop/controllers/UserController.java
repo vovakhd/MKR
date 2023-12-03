@@ -37,14 +37,6 @@ public class UserController {
         return "welcome";
     }
 
-    @GetMapping("/home")
-    public String home(Authentication auth, Model model) {
-        auth.getName();
-        model.addAttribute("progressA", Levels.calculateLevelProgress(auth.getName(),"A"));
-        model.addAttribute("progressB",Levels.calculateLevelProgress(auth.getName(),"B"));
-        return "levels";
-    }
-
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("user", new Users());
