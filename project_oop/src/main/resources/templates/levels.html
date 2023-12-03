@@ -29,25 +29,21 @@
     </div>
     <div><a class="navbar-brand", th:text="${email}"></a></div>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <form th:action="@{/logout}" method="post">
-                    <input type="submit" value="Sign Out"/>
-                </form>
-            </li>
-        </ul>
+        <form th:action="@{/logout}" method="post">
+            <input value="Sign Out" type="submit" class="btn btn-dark">
+        </form>
     </div>
 </nav>
     <div class="level-container">
         <div class="level-info">
-            <a class="p-2 text-dark" href="/levelA">Рівень A</a>
+            <b><a class="p-2 text-dark" href="/levelA">Рівень A</a></b>
             <span th:text="${progressA} + '%'"></span>
 
     </div>
     </div>
 <div class="level-container">
     <div class="level-info">
-        <a class="p-2 text-dark" href="/levelB">Рівень B</a>
+        <b><a class="p-2 text-dark" href="/levelB">Рівень B</a></b>
         <span th:text="${progressB} + '%'"></span>
     </div>
 </div>
