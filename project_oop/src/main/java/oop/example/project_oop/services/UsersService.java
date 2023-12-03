@@ -69,6 +69,8 @@ public class UsersService {
         }
 
     }
-
+public long findUserId(String mail){
+        return repository.findByEmail(mail).getId();
+}
 
 }

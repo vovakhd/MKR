@@ -11,12 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
 
-@Entity
+
 public class Lessons {
     private String numberOfLesson;
     private String lessonProgress;
-    @Id
-    private Long id;
 
     public static double calculateProgress(String userColumn, String targetLevel, int targetLesson) throws IOException, CsvException {
         List<String[]> words = readCSV();
@@ -103,13 +101,5 @@ public class Lessons {
 
     public String getLessonProgress() {
         return lessonProgress;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
     }
 }

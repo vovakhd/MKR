@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import java.util.List;
 import java.text.DecimalFormat;
 
-@Entity
 public class Levels extends Lessons {
     private String level;
     private String levelProgress;

@@ -1,5 +1,6 @@
 package oop.example.project_oop.controllers;
 import oop.example.project_oop.classes.Levels;
+import oop.example.project_oop.services.UsersService;
 import oop.example.project_oop.services.WordService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,10 @@ import org.springframework.ui.Model;
 public class WordController {
     String Level;
     int Lesson;
-    private WordService wordService;
+    private final WordService wordService;
+    public WordController(WordService Service) {
+        this.wordService = Service;
+    }
 
     @GetMapping("")
     public String pageword(Authentication auth, @PathVariable("level") String level, @PathVariable ("lessons") String lesson, Model model) {
@@ -20,12 +24,11 @@ public class WordController {
         model.addAttribute("lesson", lesson);
         this.Level = String.valueOf(level.charAt(level.length()-1));
         this.Lesson = Integer.parseInt(String.valueOf(lesson.charAt(lesson.length()-1)));
-        this.wordService = new WordService();
         wordService.generateNewWord(Level,Lesson,auth.getName());
-        if(wordService.getWord().equals("1")){
+        if(wordService.getWord(auth.getName()).equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord());
+        model.addAttribute("word", wordService.getWord(auth.getName()));
         return "pageword";
     }
 
@@ -39,17 +42,17 @@ public class WordController {
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         wordService.generateNewWord(Level,Lesson,auth.getName());
-        if(wordService.getWord().equals("1")){
+        if(wordService.getWord(auth.getName()).equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord());
+        model.addAttribute("word", wordService.getWord(auth.getName()));
         return "pageword";
     }
 
     @PostMapping("/Result")
-    public String Result(@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
-        model.addAttribute("word", wordService.getWord());
-        model.addAttribute("translate", wordService.getTranslate());
+    public String Result(Authentication auth, @PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
+        model.addAttribute("word", wordService.getWord(auth.getName()));
+        model.addAttribute("translate", wordService.getTranslate(auth.getName()));
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         return "answer";
@@ -57,14 +60,14 @@ public class WordController {
 
     @PostMapping("/Know")
     public String Know(Authentication auth,@PathVariable ("level") String level,@PathVariable ("lessons") String lesson,Model model) {
-        wordService.update_id(5 - wordService.getIndicator(), auth.getName());
+        wordService.update_id(5 - wordService.getIndicator(auth.getName()), auth.getName());
         model.addAttribute("level", level);
         model.addAttribute("lesson", lesson);
         wordService.generateNewWord(Level,Lesson,auth.getName());
-        if(wordService.getWord().equals("1")){
+        if(wordService.getWord(auth.getName()).equals("1")){
             return "allwords";
         }
-        model.addAttribute("word", wordService.getWord());
+        model.addAttribute("word", wordService.getWord(auth.getName()));
         return "pageword";
     }
 

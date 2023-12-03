@@ -14,7 +14,7 @@ public class WordData {
 
     /**Return a new word from the vocabulary
      * depending on current user, level & lesson*/
-    public static Word create_Word(String level,int lesson,String email)  throws IOException{
+    public static Word create_Word(String level,int lesson, Long id, String email)  throws IOException{
         String file = "vocabulary.csv";
         BufferedReader reader = null;
         String line = "";
@@ -46,14 +46,14 @@ public class WordData {
             }
         }
         if(Word.isEmpty()){
-            return new Word("1", "1", 1);
+            return new Word("1", "1", 1, id);
         }
         Random random = new Random();
         int word_random=random.nextInt(Word.size());
         String word=Word.get(word_random);
         String translate=Translation.get(word_random);
         int indikator=Indicator.get(word_random);
-        return new Word(word, translate, indikator);
+        return new Word(word, translate, indikator, id);
     }
 
     public static void update_indikator(String word,String email,int update) throws IOException {
