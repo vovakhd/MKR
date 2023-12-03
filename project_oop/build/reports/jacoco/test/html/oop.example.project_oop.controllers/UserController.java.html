@@ -8,50 +8,47 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class UserController {
     private final UsersService usersService;
 
-<span class="nc" id="L16">    public UserController(UsersService usersService) {</span>
-<span class="nc" id="L17">        this.usersService = usersService;</span>
-<span class="nc" id="L18">    }</span>
+<span class="fc" id="L17">    public UserController(UsersService usersService) {</span>
+<span class="fc" id="L18">        this.usersService = usersService;</span>
+<span class="fc" id="L19">    }</span>
 
     @GetMapping(&quot;/&quot;)
-    public String welcome1(){
-<span class="nc" id="L22">        return &quot;welcome&quot;;</span>
+    public String welcome1(Authentication auth){
+<span class="fc" id="L23">        return &quot;welcome&quot;;</span>
+    }
+    @GetMapping(&quot;/about&quot;)
+    public String about(){
+<span class="fc" id="L27">        return &quot;about&quot;;</span>
     }
 
     @GetMapping(&quot;/login&quot;)
     public String login(){
-<span class="nc" id="L27">        return &quot;login&quot;;</span>
+<span class="fc" id="L32">        return &quot;login&quot;;</span>
     }
 
     @GetMapping(&quot;/welcome&quot;)
     public String welcome(){
-<span class="nc" id="L32">        return &quot;welcome&quot;;</span>
-    }
-
-    @GetMapping(&quot;/home&quot;)
-    public String home(Authentication auth, Model model) {
-<span class="nc" id="L37">        model.addAttribute(&quot;progressA&quot;, Levels.calculateLevelProgress(auth.getName(),&quot;A&quot;));</span>
-<span class="nc" id="L38">        model.addAttribute(&quot;progressB&quot;,Levels.calculateLevelProgress(auth.getName(),&quot;B&quot;));</span>
-<span class="nc" id="L39">        return &quot;levels&quot;;</span>
+<span class="fc" id="L37">        return &quot;welcome&quot;;</span>
     }
 
     @GetMapping(&quot;/registration&quot;)
     public String registration(Model model) {
-<span class="nc" id="L44">        model.addAttribute(&quot;user&quot;, new Users());</span>
-<span class="nc" id="L45">        return &quot;registration&quot;;</span>
+<span class="fc" id="L42">        model.addAttribute(&quot;user&quot;, new Users());</span>
+<span class="fc" id="L43">        return &quot;registration&quot;;</span>
     }
-
     @PostMapping(&quot;/registration&quot;)
     public String newUser(@ModelAttribute Users user, Model model) throws IOException {
-<span class="nc" id="L50">        model.addAttribute(&quot;user&quot;, user);</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (!usersService.createUser(user)) { //if email is already used</span>
-<span class="nc" id="L52">            return &quot;registration&quot;;</span>
+<span class="nc" id="L47">        model.addAttribute(&quot;user&quot;, user);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (!usersService.createUser(user)) { //if email is already used</span>
+<span class="nc" id="L49">            return &quot;registration&quot;;</span>
         }
-<span class="nc" id="L54">        return &quot;redirect:/login&quot;;</span>
+<span class="nc" id="L51">        return &quot;redirect:/login&quot;;</span>
     }
 
 

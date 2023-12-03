@@ -11,30 +11,31 @@ import java.io.IOException;
 
 @Controller
 
-<span class="nc" id="L14">public class LevelController {</span>
+<span class="fc" id="L14">public class LevelController {</span>
     @GetMapping(&quot;/levelA&quot;)
     public String levelA(Model model, Authentication auth) throws IOException, CsvException {
-<span class="nc" id="L17">        model.addAttribute(&quot;title&quot;, &quot;Ð Ñ–Ð²ÐµÐ½ÑŒ Ð�&quot;);</span>
-<span class="nc" id="L18">        model.addAttribute(&quot;level&quot;, &quot;levelA&quot;);</span>
-<span class="nc" id="L19">        model.addAttribute(&quot;Lesson1&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,1));</span>
-<span class="nc" id="L20">        model.addAttribute(&quot;Lesson2&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,2));</span>
-<span class="nc" id="L21">        model.addAttribute(&quot;Lesson3&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,3));</span>
-<span class="nc" id="L22">        return &quot;lessons&quot;;</span>
+<span class="fc" id="L17">        model.addAttribute(&quot;title&quot;, &quot;Р С–РІРµРЅСЊ Рђ&quot;);</span>
+<span class="fc" id="L18">        model.addAttribute(&quot;level&quot;, &quot;levelA&quot;);</span>
+<span class="fc" id="L19">        model.addAttribute(&quot;Lesson1&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,1));</span>
+<span class="fc" id="L20">        model.addAttribute(&quot;Lesson2&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,2));</span>
+<span class="fc" id="L21">        model.addAttribute(&quot;Lesson3&quot;, Lessons.calculateProgress(auth.getName(),&quot;A&quot;,3));</span>
+<span class="fc" id="L22">        return &quot;lessons&quot;;</span>
     }
     @GetMapping(&quot;/levelB&quot;)
     public String levelB(Model model, Authentication auth) throws IOException, CsvException {
-<span class="nc" id="L26">        model.addAttribute(&quot;title&quot;, &quot;Ð Ñ–Ð²ÐµÐ½ÑŒ B&quot;);</span>
-<span class="nc" id="L27">        model.addAttribute(&quot;level&quot;, &quot;levelB&quot;);</span>
-<span class="nc" id="L28">        model.addAttribute(&quot;Lesson1&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,1));</span>
-<span class="nc" id="L29">        model.addAttribute(&quot;Lesson2&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,2));</span>
-<span class="nc" id="L30">        model.addAttribute(&quot;Lesson3&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,3));</span>
-<span class="nc" id="L31">        return &quot;lessons&quot;;</span>
+<span class="fc" id="L26">        model.addAttribute(&quot;title&quot;, &quot;Р С–РІРµРЅСЊ B&quot;);</span>
+<span class="fc" id="L27">        model.addAttribute(&quot;level&quot;, &quot;levelB&quot;);</span>
+<span class="fc" id="L28">        model.addAttribute(&quot;Lesson1&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,1));</span>
+<span class="fc" id="L29">        model.addAttribute(&quot;Lesson2&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,2));</span>
+<span class="fc" id="L30">        model.addAttribute(&quot;Lesson3&quot;, Lessons.calculateProgress(auth.getName(),&quot;B&quot;,3));</span>
+<span class="fc" id="L31">        return &quot;lessons&quot;;</span>
     }
     @GetMapping(&quot;/Levels&quot;)
     public String levels(Model model, Authentication auth) {
-<span class="nc" id="L35">        model.addAttribute(&quot;progressA&quot;,Levels.calculateLevelProgress(auth.getName(),&quot;A&quot;));</span>
-<span class="nc" id="L36">        model.addAttribute(&quot;progressB&quot;,Levels.calculateLevelProgress(auth.getName(),&quot;B&quot;));</span>
-<span class="nc" id="L37">        return &quot;levels&quot;;</span>
+<span class="fc" id="L35">        model.addAttribute(&quot;email&quot;,auth.getName());</span>
+<span class="fc" id="L36">        model.addAttribute(&quot;progressA&quot;,Levels.calculateLevelProgress(auth.getName(),&quot;A&quot;));</span>
+<span class="fc" id="L37">        model.addAttribute(&quot;progressB&quot;,Levels.calculateLevelProgress(auth.getName(),&quot;B&quot;));</span>
+<span class="fc" id="L38">        return &quot;levels&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

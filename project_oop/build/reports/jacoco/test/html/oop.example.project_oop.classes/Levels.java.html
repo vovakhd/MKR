@@ -2,73 +2,82 @@
 
 import com.opencsv.exceptions.CsvException;
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
 import java.util.List;
 import java.text.DecimalFormat;
 
-<span class="nc" id="L10">@Setter</span>
-@Getter
-@Entity
-<span class="nc" id="L13">public class Levels extends Lessons {</span>
-<span class="nc" id="L14">    private String level;</span>
-<span class="nc" id="L15">    private String levelProgress;</span>
-<span class="nc" id="L16">    private int lessonsNumber;</span>
-    public static double calculateLevelProgress(String userColumn, String targetLevel) {
-<span class="nc" id="L18">        double totalProgress = 0.0;</span>
-<span class="nc" id="L19">        int totalLessons = 0;</span>
-        try {
-<span class="nc" id="L21">            List&lt;String[]&gt; words = readCSV();</span>
-            // Ð—Ð½Ð°Ñ…Ð¾Ð´Ð¶ÐµÐ½Ð½Ñ� Ñ–Ð½Ð´ÐµÐºÑ�Ñƒ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸ ÐºÐ¾Ñ€Ð¸Ñ�Ñ‚ÑƒÐ²Ð°Ñ‡Ð° Ð² Ñ€Ñ�Ð´ÐºÐ°Ñ… CSV
-<span class="nc" id="L23">            int userColumnIndex = -1;</span>
-<span class="nc" id="L24">            String[] header = words.get(0);</span>
-<span class="nc bnc" id="L25" title="All 2 branches missed.">            for (int i = 0; i &lt; header.length; i++) {</span>
-<span class="nc bnc" id="L26" title="All 2 branches missed.">                if (header[i].equals(userColumn)) {</span>
-<span class="nc" id="L27">                    userColumnIndex = i;</span>
-<span class="nc" id="L28">                    break;</span>
-                }
-            }
-<span class="nc bnc" id="L31" title="All 2 branches missed.">            if (userColumnIndex == -1) {</span>
-<span class="nc" id="L32">                throw new CsvException(&quot;User column not found in CSV.&quot;);</span>
-            }
-<span class="nc bnc" id="L34" title="All 2 branches missed.">            for (String[] word : words) {</span>
-<span class="nc" id="L35">                String currentLevel = word[0];</span>
-                int userIndicator;
-                try {
-<span class="nc" id="L38">                    userIndicator = Integer.parseInt(word[userColumnIndex]);</span>
-<span class="nc" id="L39">                } catch (NumberFormatException e) {</span>
-<span class="nc" id="L40">                    continue;</span>
-<span class="nc" id="L41">                }</span>
-<span class="nc bnc" id="L42" title="All 2 branches missed.">                if (currentLevel.equals(targetLevel)) {</span>
-<span class="nc" id="L43">                    totalLessons++;</span>
-<span class="nc bnc" id="L44" title="All 2 branches missed.">                    totalProgress += (userIndicator &gt;= 5) ? 1 : 0;</span>
-                }
-<span class="nc" id="L46">            }</span>
-<span class="nc" id="L47">        } catch (Exception e) {</span>
-<span class="nc" id="L48">            e.printStackTrace();</span>
-<span class="nc" id="L49">        }</span>
+<span class="fc" id="L8">public class Levels extends Lessons {</span>
+    private String level;
+    private String levelProgress;
+    private int lessonsNumber;
 
-        // Ð Ð¾Ð·Ñ€Ð°Ñ…ÑƒÐ½Ð¾Ðº Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑ�Ñƒ Ð´Ð»Ñ� Ñ€Ñ–Ð²Ð½Ñ�
-<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (totalLessons &gt; 0) {</span>
-<span class="nc" id="L53">            double averageProgress = (totalProgress / totalLessons) * 100;</span>
-            // ÐžÐºÑ€ÑƒÐ³Ð»ÐµÐ½Ð½Ñ� Ð´Ð¾ 2 Ð·Ð½Ð°ÐºÑ–Ð² Ð¿Ñ–Ñ�Ð»Ñ� ÐºÐ¾Ð¼Ð¸
-<span class="nc" id="L55">            DecimalFormat decimalFormat = new DecimalFormat(&quot;#.##&quot;);</span>
-<span class="nc" id="L56">            String formattedAverageProgress = decimalFormat.format(averageProgress);</span>
-<span class="nc" id="L57">            formattedAverageProgress = formattedAverageProgress.replace(',', '.');</span>
-<span class="nc" id="L58">            return Double.parseDouble(formattedAverageProgress);</span>
-        } else {
-<span class="nc" id="L60">            return 0.0;</span>
-        }
+    public void setLevel(String level) {
+<span class="fc" id="L14">        this.level = level;</span>
+<span class="fc" id="L15">    }</span>
+
+    public void setLevelProgress(String levelProgress) {
+<span class="fc" id="L18">        this.levelProgress = levelProgress;</span>
+<span class="fc" id="L19">    }</span>
+
+    public void setLessonsNumber(int lessonsNumber) {
+<span class="fc" id="L22">        this.lessonsNumber = lessonsNumber;</span>
+<span class="fc" id="L23">    }</span>
+
+    public String getLevel() {
+<span class="fc" id="L26">        return level;</span>
     }
 
-    public static void main(String[] args) {
-<span class="nc" id="L65">        Levels levels = new Levels();</span>
+    public String getLevelProgress() {
+<span class="fc" id="L30">        return levelProgress;</span>
+    }
+
+    public int getLessonsNumber() {
+<span class="fc" id="L34">        return lessonsNumber;</span>
+    }
+    public static double calculateLevelProgress(String userColumn, String targetLevel) {
+<span class="fc" id="L37">        double totalProgress = 0.0;</span>
+<span class="fc" id="L38">        int totalLessons = 0;</span>
         try {
-<span class="nc" id="L67">            double averageProgress = calculateLevelProgress(&quot;user@mail&quot;, &quot;A&quot;);</span>
-<span class="nc" id="L68">            System.out.println(&quot;Level progress: &quot; + averageProgress + &quot;%&quot;);</span>
-<span class="nc" id="L69">        } catch (Exception e) {</span>
-<span class="nc" id="L70">            e.printStackTrace();</span>
-<span class="nc" id="L71">        }</span>
-<span class="nc" id="L72">    }</span>
+<span class="fc" id="L40">            List&lt;String[]&gt; words = readCSV();</span>
+            // Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ С–РЅРґРµРєСЃСѓ РєРѕР»РѕРЅРєРё РєРѕСЂРёСЃС‚СѓРІР°С‡Р° РІ СЂСЏРґРєР°С… CSV
+<span class="fc" id="L42">            int userColumnIndex = -1;</span>
+<span class="fc" id="L43">            String[] header = words.get(0);</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            for (int i = 0; i &lt; header.length; i++) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">                if (header[i].equals(userColumn)) {</span>
+<span class="fc" id="L46">                    userColumnIndex = i;</span>
+<span class="fc" id="L47">                    break;</span>
+                }
+            }
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            if (userColumnIndex == -1) {</span>
+<span class="fc" id="L51">                throw new CsvException(&quot;User column not found in CSV.&quot;);</span>
+            }
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            for (String[] word : words) {</span>
+<span class="fc" id="L54">                String currentLevel = word[0];</span>
+                int userIndicator;
+                try {
+<span class="fc" id="L57">                    userIndicator = Integer.parseInt(word[userColumnIndex]);</span>
+<span class="fc" id="L58">                } catch (NumberFormatException e) {</span>
+<span class="fc" id="L59">                    continue;</span>
+<span class="fc" id="L60">                }</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">                if (currentLevel.equals(targetLevel)) {</span>
+<span class="fc" id="L62">                    totalLessons++;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">                    totalProgress += (userIndicator &gt;= 5) ? 1 : 0;</span>
+                }
+<span class="fc" id="L65">            }</span>
+<span class="fc" id="L66">        } catch (Exception e) {</span>
+<span class="fc" id="L67">            e.printStackTrace();</span>
+<span class="fc" id="L68">        }</span>
+
+        // Р РѕР·СЂР°С…СѓРЅРѕРє РїСЂРѕРіСЂРµСЃСѓ РґР»СЏ СЂС–РІРЅСЏ
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (totalLessons &gt; 0) {</span>
+<span class="fc" id="L72">            double averageProgress = (totalProgress / totalLessons) * 100;</span>
+            // РћРєСЂСѓРіР»РµРЅРЅСЏ РґРѕ 2 Р·РЅР°РєС–РІ РїС–СЃР»СЏ РєРѕРјРё
+<span class="fc" id="L74">            DecimalFormat decimalFormat = new DecimalFormat(&quot;#.##&quot;);</span>
+<span class="fc" id="L75">            String formattedAverageProgress = decimalFormat.format(averageProgress);</span>
+<span class="fc" id="L76">            formattedAverageProgress = formattedAverageProgress.replace(',', '.');</span>
+<span class="fc" id="L77">            return Double.parseDouble(formattedAverageProgress);</span>
+        } else {
+<span class="fc" id="L79">            return 0.0;</span>
+        }
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

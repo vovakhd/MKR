@@ -56,6 +56,8 @@ public class WordData {
         return new Word(word, translate, indikator, id);
     }
 
+    /**Оновлює індикатор слова,
+     * для користувача за поштою додаючи число update*/
     public static void update_indikator(String word,String email,int update) throws IOException {
         String file = "vocabulary.csv";
         BufferedReader reader = null;

@@ -20,9 +20,9 @@ import static oop.example.project_oop.Data.UserData.addUserToVocabulary;
 import static oop.example.project_oop.Data.UserData.write_User;
 
 @Service
-<span class="nc" id="L23">@RequiredArgsConstructor</span>
+<span class="fc" id="L23">@RequiredArgsConstructor</span>
 public class UsersService {
-<span class="nc" id="L25">    private final Logger log = LoggerFactory.getLogger(ProjectOopApplication.class);</span>
+<span class="fc" id="L25">    private final Logger log = LoggerFactory.getLogger(ProjectOopApplication.class);</span>
     private final UsersRepository repository;
     private final PasswordEncoder passwordEncoder;
 
@@ -46,30 +46,34 @@ public class UsersService {
      and save users from file to repository
      (used only once when app is started)*/
     public boolean loadUsersFromFile() throws IOException {
-<span class="nc" id="L49">        CsvMapReader Reader = null;</span>
+<span class="fc" id="L49">        CsvMapReader Reader = null;</span>
         try {
             //read headers
-<span class="nc" id="L52">            Reader = new CsvMapReader(new FileReader(&quot;users.csv&quot;), CsvPreference.STANDARD_PREFERENCE);</span>
-<span class="nc" id="L53">            final String[] Headers = Reader.getHeader(true);</span>
+<span class="fc" id="L52">            Reader = new CsvMapReader(new FileReader(&quot;users.csv&quot;), CsvPreference.STANDARD_PREFERENCE);</span>
+<span class="fc" id="L53">            final String[] Headers = Reader.getHeader(true);</span>
 
             Map&lt;String, String&gt; row;
-<span class="nc bnc" id="L56" title="All 2 branches missed.">            while ((row = Reader.read(Headers)) != null) {</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">            while ((row = Reader.read(Headers)) != null) {</span>
                 //read each row and save the user as an entity in the repository
-<span class="nc" id="L58">                Users user = new Users(row.get(&quot;email&quot;), row.get(&quot;password&quot;));</span>
-<span class="nc" id="L59">                repository.save(user);</span>
-<span class="nc" id="L60">                log.info(&quot;User was saved from file: {} {}&quot;, user.getEmail(), user.getPassword());</span>
-<span class="nc" id="L61">            }</span>
-<span class="nc" id="L62">            return true;</span>
+<span class="fc" id="L58">                Users user = new Users(row.get(&quot;email&quot;), row.get(&quot;password&quot;));</span>
+<span class="fc" id="L59">                repository.save(user);</span>
+<span class="fc" id="L60">                log.info(&quot;User was saved from file: {} {}&quot;, user.getEmail(), user.getPassword());</span>
+<span class="fc" id="L61">            }</span>
+<span class="fc" id="L62">            return true;</span>
 
 <span class="nc" id="L64">        } catch (FileNotFoundException e) {</span>
 <span class="nc" id="L65">            throw new RuntimeException(e);</span>
         } finally { //close file
-<span class="nc bnc" id="L67" title="All 2 branches missed.">            if (Reader != null)</span>
-<span class="nc" id="L68">                Reader.close();</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">            if (Reader != null)</span>
+<span class="fc" id="L68">                Reader.close();</span>
         }
 
     }
 
+    /**РџРѕРІРµСЂС‚Р°С” ID РєРѕСЂРёСЃС‚СѓРІР°С‡Р° Р·Р° Р№РѕРіРѕ РїРѕС€С‚РѕСЋ*/
+public long findUserId(String mail){
+<span class="nc" id="L75">        return repository.findByEmail(mail).getId();</span>
+}
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

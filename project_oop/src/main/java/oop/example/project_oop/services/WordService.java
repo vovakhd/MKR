@@ -24,6 +24,9 @@ public class WordService {
     public int getIndicator(String email) {
         return repository.findById(usersService.findUserId(email)).getIndicator();
     }
+
+    /**Оновлює індикатор слова для переданого користувача
+     * та зберігає новий індикатор в файлі та в репозиторії*/
     public void update_id(int update, String email) {
         Word word = repository.findById(usersService.findUserId(email));
         repository.delete(word);

@@ -5,8 +5,6 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,101 +12,95 @@ import java.util.List;
 import java.text.DecimalFormat;
 
 
-<span class="nc" id="L17">@Setter</span>
-@Getter
-@Entity
-<span class="nc" id="L20">public class Lessons {</span>
-<span class="nc" id="L21">    private String numberOfLesson;</span>
-<span class="nc" id="L22">    private String lessonProgress;</span>
-    @Id
-    private Long id;
+<span class="fc" id="L15">public class Lessons {</span>
+    private String numberOfLesson;
+    private String lessonProgress;
 
     public static double calculateProgress(String userColumn, String targetLevel, int targetLesson) throws IOException, CsvException {
-<span class="nc" id="L27">        List&lt;String[]&gt; words = readCSV();</span>
+<span class="fc" id="L20">        List&lt;String[]&gt; words = readCSV();</span>
 
-        // Ð›Ñ–Ñ‡Ð¸Ð»ÑŒÐ½Ð¸ÐºÐ¸ Ð´Ð»Ñ� Ð²Ð¸Ð²Ñ‡ÐµÐ½Ð¸Ñ… Ñ‚Ð° Ð²Ñ�Ñ–Ñ… Ñ�Ð»Ñ–Ð²
-<span class="nc" id="L30">        int learnedWordsCount = 0;</span>
-<span class="nc" id="L31">        int totalWordsCount = 0;</span>
+        // Р›С–С‡РёР»СЊРЅРёРєРё РґР»СЏ РІРёРІС‡РµРЅРёС… С‚Р° РІСЃС–С… СЃР»С–РІ
+<span class="fc" id="L23">        int learnedWordsCount = 0;</span>
+<span class="fc" id="L24">        int totalWordsCount = 0;</span>
 
-        // Ð—Ð½Ð°Ñ…Ð¾Ð´Ð¶ÐµÐ½Ð½Ñ� Ñ–Ð½Ð´ÐµÐºÑ�Ñƒ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸ ÐºÐ¾Ñ€Ð¸Ñ�Ñ‚ÑƒÐ²Ð°Ñ‡Ð° Ð² Ñ€Ñ�Ð´ÐºÐ°Ñ… CSV
-<span class="nc" id="L34">        int userColumnIndex = -1;</span>
-<span class="nc" id="L35">        String[] header = words.get(0); // ÐŸÐµÑ€ÑˆÐ¸Ð¹ Ñ€Ñ�Ð´Ð¾Ðº Ð¼Ñ–Ñ�Ñ‚Ð¸Ñ‚ÑŒ Ð·Ð°Ð³Ð¾Ð»Ð¾Ð²ÐºÐ¸ ÐºÐ¾Ð»Ð¾Ð½Ð¾Ðº</span>
-<span class="nc bnc" id="L36" title="All 2 branches missed.">        for (int i = 0; i &lt; header.length; i++) {</span>
-<span class="nc bnc" id="L37" title="All 2 branches missed.">            if (header[i].equals(userColumn)) {</span>
-<span class="nc" id="L38">                userColumnIndex = i;</span>
-<span class="nc" id="L39">                break;</span>
+        // Р—РЅР°С…РѕРґР¶РµРЅРЅСЏ С–РЅРґРµРєСЃСѓ РєРѕР»РѕРЅРєРё РєРѕСЂРёСЃС‚СѓРІР°С‡Р° РІ СЂСЏРґРєР°С… CSV
+<span class="fc" id="L27">        int userColumnIndex = -1;</span>
+<span class="fc" id="L28">        String[] header = words.get(0); // РџРµСЂС€РёР№ СЂСЏРґРѕРє РјС–СЃС‚РёС‚СЊ Р·Р°РіРѕР»РѕРІРєРё РєРѕР»РѕРЅРѕРє</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (int i = 0; i &lt; header.length; i++) {</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            if (header[i].equals(userColumn)) {</span>
+<span class="fc" id="L31">                userColumnIndex = i;</span>
+<span class="fc" id="L32">                break;</span>
             }
         }
 
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (userColumnIndex == -1) {</span>
-<span class="nc" id="L44">            throw new CsvException(&quot;User column not found in CSV.&quot;);</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (userColumnIndex == -1) {</span>
+<span class="fc" id="L37">            throw new CsvException(&quot;User column not found in CSV.&quot;);</span>
         }
 
-<span class="nc bnc" id="L47" title="All 2 branches missed.">        for (String[] word : words) {</span>
-<span class="nc" id="L48">            String level = word[0];</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (String[] word : words) {</span>
+<span class="fc" id="L41">            String level = word[0];</span>
             int lesson;
             int userIndicator;
 
             try {
-<span class="nc" id="L53">                lesson = Integer.parseInt(word[1]);</span>
-<span class="nc" id="L54">                userIndicator = Integer.parseInt(word[userColumnIndex]);</span>
-<span class="nc" id="L55">            } catch (NumberFormatException e) {</span>
-<span class="nc" id="L56">                continue;</span>
-<span class="nc" id="L57">            }</span>
+<span class="fc" id="L46">                lesson = Integer.parseInt(word[1]);</span>
+<span class="fc" id="L47">                userIndicator = Integer.parseInt(word[userColumnIndex]);</span>
+<span class="fc" id="L48">            } catch (NumberFormatException e) {</span>
+<span class="fc" id="L49">                continue;</span>
+<span class="fc" id="L50">            }</span>
 
-<span class="nc bnc" id="L59" title="All 4 branches missed.">            if (level.equals(targetLevel) &amp;&amp; lesson == targetLesson) {</span>
-<span class="nc" id="L60">                totalWordsCount++;</span>
+<span class="fc bfc" id="L52" title="All 4 branches covered.">            if (level.equals(targetLevel) &amp;&amp; lesson == targetLesson) {</span>
+<span class="fc" id="L53">                totalWordsCount++;</span>
 
-<span class="nc bnc" id="L62" title="All 2 branches missed.">                if (userIndicator &gt;= 5) {</span>
-<span class="nc" id="L63">                    learnedWordsCount++;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">                if (userIndicator &gt;= 5) {</span>
+<span class="fc" id="L56">                    learnedWordsCount++;</span>
                 }
             }
-<span class="nc" id="L66">        }</span>
+<span class="fc" id="L59">        }</span>
 
-        // Ð Ð¾Ð·Ñ€Ð°Ñ…ÑƒÐ½Ð¾Ðº Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑ�Ñƒ Ñƒ Ð²Ñ–Ð´Ñ�Ð¾Ñ‚ÐºÐ°Ñ…
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (totalWordsCount &gt; 0) {</span>
-<span class="nc" id="L70">            double progressPercentage = (double) learnedWordsCount / totalWordsCount * 100;</span>
-            // ÐžÐºÑ€ÑƒÐ³Ð»ÐµÐ½Ð½Ñ� Ð´Ð¾ 2 Ð·Ð½Ð°ÐºÑ–Ð² Ð¿Ñ–Ñ�Ð»Ñ� ÐºÐ¾Ð¼Ð¸
-<span class="nc" id="L72">            DecimalFormat decimalFormat = new DecimalFormat(&quot;#.##&quot;);</span>
-<span class="nc" id="L73">            String formattedProgress = decimalFormat.format(progressPercentage);</span>
-            // Ð—Ð°Ð¼Ñ–Ð½Ð° ÐºÐ¾Ð¼Ð¸ Ð½Ð° ÐºÑ€Ð°Ð¿ÐºÑƒ (Ð´Ð»Ñ� Ð·Ð°Ð¿Ð¾Ð±Ñ–Ð³Ð°Ð½Ð½Ñ� NumberFormatException)
-<span class="nc" id="L75">            formattedProgress = formattedProgress.replace(',', '.');</span>
-<span class="nc" id="L76">            return Double.parseDouble(formattedProgress);</span>
+        // Р РѕР·СЂР°С…СѓРЅРѕРє РїСЂРѕРіСЂРµСЃСѓ Сѓ РІС–РґСЃРѕС‚РєР°С…
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if (totalWordsCount &gt; 0) {</span>
+<span class="fc" id="L63">            double progressPercentage = (double) learnedWordsCount / totalWordsCount * 100;</span>
+            // РћРєСЂСѓРіР»РµРЅРЅСЏ РґРѕ 2 Р·РЅР°РєС–РІ РїС–СЃР»СЏ РєРѕРјРё
+<span class="fc" id="L65">            DecimalFormat decimalFormat = new DecimalFormat(&quot;#.##&quot;);</span>
+<span class="fc" id="L66">            String formattedProgress = decimalFormat.format(progressPercentage);</span>
+            // Р—Р°РјС–РЅР° РєРѕРјРё РЅР° РєСЂР°РїРєСѓ (РґР»СЏ Р·Р°РїРѕР±С–РіР°РЅРЅСЏ NumberFormatException)
+<span class="fc" id="L68">            formattedProgress = formattedProgress.replace(',', '.');</span>
+<span class="fc" id="L69">            return Double.parseDouble(formattedProgress);</span>
         } else {
-<span class="nc" id="L78">            return 0.0;  // Ð¯ÐºÑ‰Ð¾ Ð½ÐµÐ¼Ð°Ñ” Ñ�Ð»Ñ–Ð², Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑ� Ð´Ð¾Ñ€Ñ–Ð²Ð½ÑŽÑ” 0</span>
+<span class="nc" id="L71">            return 0.0;  // РЇРєС‰Рѕ РЅРµРјР°С” СЃР»С–РІ, РїСЂРѕРіСЂРµСЃ РґРѕСЂС–РІРЅСЋС” 0</span>
         }
     }
 
-    // Ð¤ÑƒÐ½ÐºÑ†Ñ–Ñ� Ð´Ð»Ñ� Ð·Ñ‡Ð¸Ñ‚ÑƒÐ²Ð°Ð½Ð½Ñ� Ð´Ð°Ð½Ð¸Ñ… Ð· CSV-Ñ„Ð°Ð¹Ð»Ñƒ
+    // Р¤СѓРЅРєС†С–СЏ РґР»СЏ Р·С‡РёС‚СѓРІР°РЅРЅСЏ РґР°РЅРёС… Р· CSV-С„Р°Р№Р»Сѓ
     public static List&lt;String[]&gt; readCSV() throws IOException, CsvException {
-<span class="nc" id="L84">        String file = &quot;vocabulary.csv&quot;;</span>
-<span class="nc" id="L85">        List&lt;String[]&gt; words = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L86">        try (CSVReader csvReader = new CSVReaderBuilder(new FileReader(file)).build()) {</span>
-<span class="nc" id="L87">            String[] headers = csvReader.readNext();</span>
-<span class="nc bnc" id="L88" title="All 2 branches missed.">            if (headers == null) {</span>
-<span class="nc" id="L89">                throw new CsvException(&quot;CSV file is empty or does not contain headers.&quot;);</span>
+<span class="fc" id="L77">        String file = &quot;vocabulary.csv&quot;;</span>
+<span class="fc" id="L78">        List&lt;String[]&gt; words = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L79">        try (CSVReader csvReader = new CSVReaderBuilder(new FileReader(file)).build()) {</span>
+<span class="fc" id="L80">            String[] headers = csvReader.readNext();</span>
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">            if (headers == null) {</span>
+<span class="nc" id="L82">                throw new CsvException(&quot;CSV file is empty or does not contain headers.&quot;);</span>
             }
-<span class="nc" id="L91">            words.add(headers);</span>
-<span class="nc" id="L92">            words.addAll(csvReader.readAll());</span>
+<span class="fc" id="L84">            words.add(headers);</span>
+<span class="fc" id="L85">            words.addAll(csvReader.readAll());</span>
         }
-<span class="nc" id="L94">        return words;</span>
+<span class="fc" id="L87">        return words;</span>
     }
-    public static void main(String[] args) {
-<span class="nc" id="L97">        Lessons lessons = new Lessons();</span>
-        try {
-<span class="nc" id="L99">            double progress = calculateProgress(&quot;user@mail&quot;, &quot;A&quot;, 2);</span>
-<span class="nc" id="L100">            System.out.println(&quot;Progress: &quot; + progress + &quot;%&quot;);</span>
-<span class="nc" id="L101">        } catch (IOException | CsvException e) {</span>
-<span class="nc" id="L102">            e.printStackTrace();</span>
-<span class="nc" id="L103">        }</span>
-<span class="nc" id="L104">    }</span>
 
-    public void setId(Long id) {
-<span class="nc" id="L107">        this.id = id;</span>
-<span class="nc" id="L108">    }</span>
+    public void setNumberOfLesson(String numberOfLesson) {
+<span class="fc" id="L91">        this.numberOfLesson = numberOfLesson;</span>
+<span class="fc" id="L92">    }</span>
 
-    public Long getId() {
-<span class="nc" id="L111">        return id;</span>
+    public void setLessonProgress(String lessonProgress) {
+<span class="fc" id="L95">        this.lessonProgress = lessonProgress;</span>
+<span class="fc" id="L96">    }</span>
+
+    public String getNumberOfLesson() {
+<span class="fc" id="L99">        return numberOfLesson;</span>
+    }
+
+    public String getLessonProgress() {
+<span class="fc" id="L103">        return lessonProgress;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

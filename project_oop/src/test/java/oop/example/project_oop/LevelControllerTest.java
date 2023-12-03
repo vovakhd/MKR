@@ -75,5 +75,13 @@ public class LevelControllerTest {
                 .andExpect(model().attribute("progressB",Levels.calculateLevelProgress("user@mail","B")));
 
     }
+    @Test
+    @WithMockUser(username = "user@mail")
+    public void test_levels() throws Exception {
+
+        mockMvc.perform(get("/Levels").with(user("user@mail")))
+                .andExpect(status().isOk())
+                .andExpect(view().name("levels"));
+    }
 
 }
