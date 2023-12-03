@@ -1,0 +1,90 @@
+level,lesson,word,translation,NEWuser,NEWuser2
+A,1,classroom,класна кімната,-1,-1
+A,1,TV studio,телестудія,-1,-1
+A,1,airport,аеропорт,-1,-1
+A,1,street,вулиця,-1,-1
+A,1,office,офіс,-1,-1
+A,1,camera,фотокамера,-1,-1
+A,1,laptop,ноутбук,-1,-1
+A,1,diary,щоденник,-1,-1
+A,1,magazine,журнал,-1,-1
+A,1,lift,ліфт,-1,-1
+A,1,chair,стілець,-1,-1
+A,1,bag,сумка,-1,-1
+A,1,notebook,записник,-1,-1
+A,1,ticket,білет,-1,-1
+A,1,table,стіл,-1,-1
+A,1,money exchange,обмін валют,-1,-1
+A,1,whiteboard,дошка,-1,-1
+A,1,pen,ручка,-1,-1
+A,1,pencil,олівець,-1,-1
+A,1,projector,проектор,-1,-1
+A,1,picture,картина,-1,-1
+A,1,noticeboard,дошка оголошень,-1,-1
+A,2,to get up,прокидатися,-1,-1
+A,2,to go to bed,йти спати,-1,-1
+A,2,to have breakfast,снідати,-1,-1
+A,2,to get home,діставатись додому,-1,-1
+A,2,to have lunch,обідати,-1,-1
+A,2,to leave home,йти з дому,-1,-1
+A,2,to have dinner,вечеряти,-1,-1
+A,2,usual,звичайний,-1,-1
+A,2,to try,намагатись,-1,-1
+A,2,to cook,готувати їжу,-1,-1
+A,2,to clean,чистити,-1,-1
+A,2,to wash,мити,-1,-1
+A,2,film,фільм,-1,-1
+A,2,to travel,подорожувати,-1,-1
+A,2,map,карта,-1,-1
+A,2,junk food,некорисна їжа,-1,-1
+A,2,to relax,відпочивати,-1,-1
+A,2,to hate,ненавидіти,-1,-1
+A,2,of course,звісно,-1,-1
+A,2,to prepare,готувати,-1,-1
+A,2,price,ціна,-1,-1
+A,2,tram,трамвай,-1,-1
+A,2,to ride,їздити,-1,-1
+A,2,outside,надворі,-1,-1
+A,2,inside,в приміщенні,-1,-1
+A,2,busy,зайнятий,-1,-1
+A,3,intelligent,розумний,-1,-1
+A,3,kind,ласкавий,-1,-1
+A,3,talkative,балакучий,-1,-1
+A,3,friendly,дружній,-1,-1
+A,3,funny,веселий,-1,-1
+A,3,stupid,дурний,-1,-1
+A,3,serious,серйозний,-1,-1
+A,3,unfriendly,недружній,-1,-1
+A,3,quiet,тихий,-1,-1
+A,3,unkind,неласкавий,-1,-1
+A,3,sometimes,іноді,-1,-1
+A,3,usually,зазвичай,-1,-1
+A,3,often,часто,-1,-1
+A,3,hardly ever,вкрай рідко,-1,-1
+B,1,by mistake,помилково,-1,-1
+B,1,on someone's own,на власний розсуд,-1,-1
+B,1,on business,по справі,-1,-1
+B,1,by chance,випадково,-1,-1
+B,1,by hand,вручну,-1,-1
+B,1,in the end,в кінці,-1,-1
+B,1,on purpose,з метою,-1,-1
+B,1,on time,вчасно,-1,-1
+B,1,in a hurry,поспіхом,-1,-1
+B,1,in person,особисто,-1,-1
+B,1,regarding,стосовно,-1,-1
+B,2,to gossip,пліткувати,-1,-1
+B,2,to compliment,робити комплімент,-1,-1
+B,2,to chat,спілкуватися,-1,-1
+B,2,to boast,хвалитися,-1,-1
+B,2,to argue,сперечатися,-1,-1
+B,2,to warn,попередити,-1,-1
+B,2,to apologise,вибачитися,-1,-1
+B,3,brilliant,блискучий,-1,-1
+B,3,terrible,жахливий,-1,-1
+B,3,furious,розлючений,-1,-1
+B,3,enormous,величезний,-1,-1
+B,3,tiny,крихітний,-1,-1
+B,3,impossible,неможливо,-1,-1
+B,3,exhausted,виснажений,-1,-1
+B,3,amazing,дивовижний,-1,-1
+B,3,fascinating,захоплюючий,-1,-1
